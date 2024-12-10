@@ -1,0 +1,41 @@
+# Ignore build and target directories
+/target/
+/lib_managed/
+/src_managed/
+/project/project/
+/project/target/
+
+# Ignore compiled class files, including inner classes
+*.class
+
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.vscode/
+
+# SBT-related files
+/.bloop/
+/.bsp/
+/.metals/
+/.cache/
+/logs/
+/out/
+/project/metals.sbt
+
+# Scala REPL history
+.scala_history
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*~
