@@ -1,0 +1,14 @@
+0) docker-compose down
+
+1) Start the Kafka and Zookeeper Services
+Run the following command to start your Kafka and Zookeeper services:
+
+docker-compose up -d
+
+2) Run the Kafka Setup Script
+Once the services are up, run the kafka-setup.sh script to create the Kafka topic with a replication factor of 3:
+
+bash kafka-setup.sh
+
+3)Verify the topic was created with the correct replication factor:
+kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic sensor-readings
