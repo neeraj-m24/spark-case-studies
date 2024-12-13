@@ -1,5 +1,6 @@
 //import AppConstants.{KAFKA_BROKERS, KAFKA_TOPIC}
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import utils.AppConstants.{KAFKA_BROKERS, KAFKA_TOPIC}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import java.util.Properties
@@ -12,17 +13,15 @@ object Producer {
 
     // Kafka producer properties
     val props = new Properties()
-//    props.put("bootstrap.servers", KAFKA_BROKERS)
-    props.put("bootstrap.servers", "localhost:9092")
+    props.put("bootstrap.servers", KAFKA_BROKERS)
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
 
     val producer = new KafkaProducer[String, String](props)
 
-    // Random data generator
     val random = new Random()
 
-    // Function to send a message
+
     def sendRecord(): Unit = {
       val store = random.nextInt(45) + 1 // Random orderId between 1 and 45
       val dept = random.nextInt(91) + 1 // Random userId between 1 and 91
@@ -34,7 +33,7 @@ object Producer {
       val message = s"""{"Store": $store, "Dept": $dept, "Date": "$date", "Weekly_Sales": $weeklySales, "IsHoliday": $isHoliday}"""
 
       // Send the message to Kafka
-      val record = new ProducerRecord[String, String]("sales-updates", null, message)
+      val record = new ProducerRecord[String, String](KAFKA_TOPIC, null, message)
       producer.send(record)
 
       // Print the message with the timestamp

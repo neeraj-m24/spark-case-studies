@@ -15,17 +15,11 @@ object SparkConfig {
       .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
       .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
 
-      //      =============================================
-//      remove below lines if issue is not resolved
       .config("spark.kafka.consumer.fetch.max.wait.ms", "5000")
       .config("spark.kafka.consumer.request.timeout.ms", "10000")
       .config("spark.kafka.consumer.max.partition.fetch.bytes", "1048576")
-      //      =============================================
-
       .master("local[*]")
       .getOrCreate()
 
-//      .config("spark.master", "local[*]")
-//      .getOrCreate()
   }
 }
