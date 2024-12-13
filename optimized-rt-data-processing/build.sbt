@@ -11,26 +11,48 @@ lazy val root = (project in file("."))
     name := "optimized-rt-data-processing"
   )
 
+//libraryDependencies ++=
+//  Seq(
+//    "org.apache.spark"             %% "spark-core"           % "3.2.1",
+//    "org.apache.spark"             %% "spark-sql"            % "3.2.1",
+//    "org.apache.spark"             %% "spark-yarn"           % "3.2.1",
+//    "org.apache.spark"             %% "spark-sql-kafka-0-10" % "3.2.1", // Match Spark version
+//    "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+//    "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+//    "com.typesafe.akka" %% "akka-stream-kafka" % akkaStreamKafkaVersion,
+//    "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
+//    "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
+//    "org.apache.kafka" % "kafka-clients" % "3.7.0",
+//    "org.slf4j" % "slf4j-api" % "2.0.9",
+//
+//    // Spark Streaming library
+//    "org.apache.spark" %% "spark-streaming" % "3.3.0",
+//      "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.5",
+//
+//
+//    // Spark Streaming Kafka integration library
+//    "org.apache.spark" %% "spark-streaming-kafka-0-10" % "3.3.0",
+//"com.typesafe" % "config" % "1.4.2",
+//      "io.delta" %% "delta-core" % "2.4.0"
+//
+//  )
+
 libraryDependencies ++=
   Seq(
-    "org.apache.spark"             %% "spark-core"           % "3.2.1",
-    "org.apache.spark"             %% "spark-sql"            % "3.2.1",
-    "org.apache.spark"             %% "spark-yarn"           % "3.2.1",
-    "org.apache.spark"             %% "spark-sql-kafka-0-10" % "3.2.1", // Match Spark version
+    "org.apache.spark" %% "spark-core" % "3.2.1",
+    "org.apache.spark" %% "spark-sql" % "3.2.1",
+    "org.apache.spark" %% "spark-yarn" % "3.2.1",
+    "org.apache.spark" %% "spark-sql-kafka-0-10" % "3.2.1",
+    "org.apache.spark" %% "spark-streaming" % "3.2.1",
+    "org.apache.spark" %% "spark-streaming-kafka-0-10" % "3.2.1",
+    "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.5",
+    "io.delta" %% "delta-core" % "1.2.1", // Compatible with Spark 3.2.x
+    "com.typesafe" % "config" % "1.4.2",
+    "org.apache.kafka" % "kafka-clients" % "3.2.0",
     "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream-kafka" % akkaStreamKafkaVersion,
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
-    "org.apache.kafka" % "kafka-clients" % "3.7.0",
-    "org.slf4j" % "slf4j-api" % "2.0.9",
-
-    // Spark Streaming library
-    "org.apache.spark" %% "spark-streaming" % "3.3.0",
-
-
-
-    // Spark Streaming Kafka integration library
-    "org.apache.spark" %% "spark-streaming-kafka-0-10" % "3.3.0"
-
+    "org.slf4j" % "slf4j-api" % "2.0.9"
   )
