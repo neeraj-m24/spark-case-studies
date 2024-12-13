@@ -39,10 +39,11 @@ object Main {
     metrics.show(5, truncate = false)
 
     // Save data to GCP storage
-    enrichedData.limit(10).write.mode("overwrite").partitionBy("Store", "Date").parquet("gs://spark_learning_1/final-project/case-study-4/enriched_data")
+//    enrichedData.limit(1000).write.mode("overwrite").partitionBy("Store", "Date").parquet("gs://spark_learning_1/final-project/case-study-4/enriched_data")
+    enrichedData.write.mode("overwrite").partitionBy("Store", "Date").parquet("gs://spark_learning_1/final-project/case-study-4/enriched_data")
     println("Enriched data saved to GCP.")
 
-    metrics.limit(10).write.mode("overwrite").json("gs://spark_learning_1/final-project/case-study-4/metrics")
+    metrics.write.mode("overwrite").json("gs://spark_learning_1/final-project/case-study-4/metrics")
     println("Metrics saved to GCP.")
 
     // Kafka Configuration Map
