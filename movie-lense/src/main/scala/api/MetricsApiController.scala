@@ -49,7 +49,7 @@ object MetricsApiController {
 
     val movieMetricsPath = s"$metricsBasePath/movie-metrics"
     val genreMetricsPath = s"$metricsBasePath/genre-metrics"
-    val demographicMetricsPath = s"$metricsBasePath/demographic-metrics"
+    val demographicMetricsPath = s"$metricsBasePath/demographics-metrics"
 
     // Load DataFrame with error handling
     def loadMetrics(path: String): DataFrame = {
@@ -76,14 +76,15 @@ object MetricsApiController {
           path("movies") {
             get {
               val movieMetricsDF = loadMetrics(movieMetricsPath)
-              val movieMetrics = movieMetricsDF.sort(desc("average_rating"))
+              movieMetricsDF.show(false)
+              val movieMetrics = movieMetricsDF.sort(desc("avgRating"))
                 .collect()
                 .map(row => MovieMetric(
                   row.getAs[Int]("movieId"),
                   row.getAs[String]("title"),
                   row.getAs[String]("genres"),
-                  row.getAs[Double]("average_rating"),
-                  row.getAs[Long]("total_ratings")
+                  row.getAs[Double]("avgRating"),
+                  row.getAs[Long]("ratingCount")
                 )).toList.toJson.prettyPrint
               respondWithHeaders(corsHeaders) {
                 complete(OK, HttpEntity(ContentTypes.`application/json`, movieMetrics))
@@ -93,12 +94,12 @@ object MetricsApiController {
           path("genres") {
             get {
               val genreMetricsDF = loadMetrics(genreMetricsPath)
-              val genreMetrics = genreMetricsDF.sort(desc("average_rating"))
+              val genreMetrics = genreMetricsDF.sort(desc("avgRating"))
                 .collect()
                 .map(row => GenreMetric(
                   row.getAs[String]("genre"),
-                  row.getAs[Double]("average_rating"),
-                  row.getAs[Long]("total_ratings")
+                  row.getAs[Double]("avgRating"),
+                  row.getAs[Long]("ratingCount")
                 )).toList.toJson.prettyPrint
               respondWithHeaders(corsHeaders) {
                 complete(OK, HttpEntity(ContentTypes.`application/json`, genreMetrics))
@@ -108,14 +109,14 @@ object MetricsApiController {
           path("demographics") {
             get {
               val demographicMetricsDF = loadMetrics(demographicMetricsPath)
-              val demographicMetrics = demographicMetricsDF.sort(desc("average_rating"))
+              val demographicMetrics = demographicMetricsDF.sort(desc("avgRating"))
                 .collect()
                 .map(row => DemographicMetric(
                   row.getAs[String]("age"),
                   row.getAs[String]("gender"),
                   row.getAs[String]("location"),
-                  row.getAs[Double]("average_rating"),
-                  row.getAs[Long]("total_ratings")
+                  row.getAs[Double]("avgRating"),
+                  row.getAs[Long]("ratingCount")
                 )).toList.toJson.prettyPrint
               respondWithHeaders(corsHeaders) {
                 complete(OK, HttpEntity(ContentTypes.`application/json`, demographicMetrics))
