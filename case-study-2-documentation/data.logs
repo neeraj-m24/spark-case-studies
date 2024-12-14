@@ -1,0 +1,1454 @@
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|845   |79     |4.0   |1734205174731|
+|293   |451    |3.0   |1734205174802|
+|395   |533    |2.2   |1734205174870|
+|509   |785    |4.7   |1734205174941|
+|415   |578    |0.8   |1734205175011|
+|120   |412    |2.7   |1734205175080|
+|348   |644    |1.1   |1734205175152|
+|691   |659    |3.9   |1734205175222|
+|421   |137    |4.8   |1734205175291|
+|920   |55     |3.2   |1734205175362|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+---------------------------------+--------------------------------+
+|movieId|userId|rating|timestamp    |title                            |genres                          |
++-------+------+------+-------------+---------------------------------+--------------------------------+
+|79     |845   |4.0   |1734205174731|Juror, The (1996)                |Drama|Thriller                  |
+|451    |293   |3.0   |1734205174802|Flesh and Bone (1993)            |Drama|Mystery|Romance           |
+|533    |395   |2.2   |1734205174870|Shadow, The (1994)               |Action|Adventure|Fantasy|Mystery|
+|785    |509   |4.7   |1734205174941|Kingpin (1996)                   |Comedy                          |
+|412    |120   |2.7   |1734205175080|Age of Innocence, The (1993)     |Drama                           |
+|644    |348   |1.1   |1734205175152|Happy Weekend (1996)             |Comedy                          |
+|659    |691   |3.9   |1734205175222|Purple Noon (Plein soleil) (1960)|Crime|Drama|Thriller            |
+|137    |421   |4.8   |1734205175291|Man of the Year (1995)           |Documentary                     |
+|55     |920   |3.2   |1734205175362|Georgia (1995)                   |Drama                           |
+|85     |832   |4.0   |1734205175431|Angels and Insects (1995)        |Drama|Romance                   |
++-------+------+------+-------------+---------------------------------+--------------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+
+|userId|movieId|rating|timestamp    |title                            |genres                          |firstName|lastName |age|location     |gender    |
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+
+|845   |79     |4.0   |1734205174731|Juror, The (1996)                |Drama|Thriller                  |Orval    |DuBuque  |24 |Celinaland   |Male      |
+|293   |451    |3.0   |1734205174802|Flesh and Bone (1993)            |Drama|Mystery|Romance           |Bong     |Kemmer   |63 |Josueside    |Female    |
+|395   |533    |2.2   |1734205174870|Shadow, The (1994)               |Action|Adventure|Fantasy|Mystery|Bernetta |Gaylord  |55 |Melmouth     |Male      |
+|509   |785    |4.7   |1734205174941|Kingpin (1996)                   |Comedy                          |Ami      |Schinner |44 |Lake Lidia   |Female    |
+|120   |412    |2.7   |1734205175080|Age of Innocence, The (1993)     |Drama                           |Malik    |Daugherty|38 |Devonfurt    |Male      |
+|348   |644    |1.1   |1734205175152|Happy Weekend (1996)             |Comedy                          |Belinda  |Turner   |38 |Handfort     |Male      |
+|691   |659    |3.9   |1734205175222|Purple Noon (Plein soleil) (1960)|Crime|Drama|Thriller            |Kristofer|Flatley  |40 |Port Tishbury|Female    |
+|421   |137    |4.8   |1734205175291|Man of the Year (1995)           |Documentary                     |Hanh     |Prohaska |43 |Antonyview   |Female    |
+|920   |55     |3.2   |1734205175362|Georgia (1995)                   |Drama                           |Masako   |Olson    |34 |Marksborough |Non-Binary|
+|832   |85     |4.0   |1734205175431|Angels and Insects (1995)        |Drama|Romance                   |Lettie   |Beier    |62 |Vidaton      |Male      |
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                            |genres                          |firstName|lastName |age|location     |gender    |partitionDate|
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+-------------+
+|845   |79     |4.0   |1734205174731|Juror, The (1996)                |Drama|Thriller                  |Orval    |DuBuque  |24 |Celinaland   |Male      |2024-12-15   |
+|293   |451    |3.0   |1734205174802|Flesh and Bone (1993)            |Drama|Mystery|Romance           |Bong     |Kemmer   |63 |Josueside    |Female    |2024-12-15   |
+|395   |533    |2.2   |1734205174870|Shadow, The (1994)               |Action|Adventure|Fantasy|Mystery|Bernetta |Gaylord  |55 |Melmouth     |Male      |2024-12-15   |
+|509   |785    |4.7   |1734205174941|Kingpin (1996)                   |Comedy                          |Ami      |Schinner |44 |Lake Lidia   |Female    |2024-12-15   |
+|120   |412    |2.7   |1734205175080|Age of Innocence, The (1993)     |Drama                           |Malik    |Daugherty|38 |Devonfurt    |Male      |2024-12-15   |
+|348   |644    |1.1   |1734205175152|Happy Weekend (1996)             |Comedy                          |Belinda  |Turner   |38 |Handfort     |Male      |2024-12-15   |
+|691   |659    |3.9   |1734205175222|Purple Noon (Plein soleil) (1960)|Crime|Drama|Thriller            |Kristofer|Flatley  |40 |Port Tishbury|Female    |2024-12-15   |
+|421   |137    |4.8   |1734205175291|Man of the Year (1995)           |Documentary                     |Hanh     |Prohaska |43 |Antonyview   |Female    |2024-12-15   |
+|920   |55     |3.2   |1734205175362|Georgia (1995)                   |Drama                           |Masako   |Olson    |34 |Marksborough |Non-Binary|2024-12-15   |
+|832   |85     |4.0   |1734205175431|Angels and Insects (1995)        |Drama|Romance                   |Lettie   |Beier    |62 |Vidaton      |Male      |2024-12-15   |
++------+-------+------+-------------+---------------------------------+--------------------------------+---------+---------+---+-------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                         |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                          |2.6      |1          |
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy      |4.1      |1          |
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                  |2.9      |2          |
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller          |2.4      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy|1.93     |4          |
+|656    |Eddie (1996)                                                                |Comedy                         |1.55     |2          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance           |3.28     |4          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                          |3.95     |2          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama              |3.85     |2          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                 |2.8      |3          |
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.79     |111        |
+|Romance    |2.65     |237        |
+|Thriller   |2.78     |197        |
+|Adventure  |2.95     |137        |
+|Drama      |2.81     |613        |
+|War        |2.84     |47         |
+|Documentary|2.81     |47         |
+|Fantasy    |2.97     |62         |
+|Mystery    |2.64     |67         |
+|Musical    |2.79     |28         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+--------------+---------+-----------+
+|age|gender    |location      |avgRating|ratingCount|
++---+----------+--------------+---------+-----------+
+|58 |Female    |Port Gil      |1.7      |1          |
+|33 |Male      |East Syble    |0.6      |1          |
+|50 |Male      |Shirleyton    |4.45     |2          |
+|79 |Female    |West Salvatore|1.9      |1          |
+|30 |Non-Binary|Schuliststad  |2.6      |2          |
+|57 |Female    |Giovannashire |3.0      |2          |
+|43 |Non-Binary|Cristystad    |2.7      |1          |
+|77 |Female    |Port Rosio    |2.65     |2          |
+|66 |Non-Binary|Rauberg       |2.2      |1          |
+|70 |Female    |East Prudence |1.95     |2          |
++---+----------+--------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 1 processed successfully
+24/12/15 01:12:31 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
+24/12/15 01:12:35 WARN CacheManager: Asked to cache already cached data.
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|982   |362    |2.8   |1734205258800|
+|194   |996    |1.7   |1734205258872|
+|741   |571    |2.1   |1734205258942|
+|232   |147    |0.7   |1734205259010|
+|190   |756    |1.1   |1734205259081|
+|332   |481    |4.5   |1734205259150|
+|471   |41     |0.7   |1734205259220|
+|725   |820    |1.4   |1734205259291|
+|217   |413    |2.6   |1734205259361|
+|791   |518    |2.3   |1734205259432|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+--------------------------------------------------+---------------------------+
+|movieId|userId|rating|timestamp    |title                                             |genres                     |
++-------+------+------+-------------+--------------------------------------------------+---------------------------+
+|362    |982   |2.8   |1734205258800|Jungle Book, The (1994)                           |Adventure|Children|Romance |
+|996    |194   |1.7   |1734205258872|Last Man Standing (1996)                          |Action|Crime|Drama|Thriller|
+|571    |741   |2.1   |1734205258942|Wedding Gift, The (1994)                          |Drama|Romance              |
+|147    |232   |0.7   |1734205259010|Basketball Diaries, The (1995)                    |Drama                      |
+|756    |190   |1.1   |1734205259081|Carmen Miranda: Bananas Is My Business (1994)     |Documentary                |
+|481    |332   |4.5   |1734205259150|Kalifornia (1993)                                 |Drama|Thriller             |
+|41     |471   |0.7   |1734205259220|Richard III (1995)                                |Drama|War                  |
+|820    |725   |1.4   |1734205259291|Death in the Garden (Mort en ce jardin, La) (1956)|Drama                      |
+|413    |217   |2.6   |1734205259361|Airheads (1994)                                   |Comedy                     |
+|518    |791   |2.3   |1734205259432|Road to Wellville, The (1994)                     |Comedy                     |
++-------+------+------+-------------+--------------------------------------------------+---------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+
+|userId|movieId|rating|timestamp    |title                                             |genres                     |firstName|lastName|age|location          |gender    |
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+
+|982   |362    |2.8   |1734205258800|Jungle Book, The (1994)                           |Adventure|Children|Romance |Greg     |Mueller |31 |Spinkaside        |Male      |
+|194   |996    |1.7   |1734205258872|Last Man Standing (1996)                          |Action|Crime|Drama|Thriller|Wesley   |Wiza    |32 |Uptonburgh        |Non-Binary|
+|741   |571    |2.1   |1734205258942|Wedding Gift, The (1994)                          |Drama|Romance              |Chauncey |Sipes   |60 |East Aja          |Male      |
+|232   |147    |0.7   |1734205259010|Basketball Diaries, The (1995)                    |Drama                      |Angla    |Brakus  |35 |Johnathonland     |Female    |
+|190   |756    |1.1   |1734205259081|Carmen Miranda: Bananas Is My Business (1994)     |Documentary                |Bennett  |Rath    |24 |South Steve       |Male      |
+|332   |481    |4.5   |1734205259150|Kalifornia (1993)                                 |Drama|Thriller             |Craig    |Krajcik |47 |Aufderharland     |Non-Binary|
+|471   |41     |0.7   |1734205259220|Richard III (1995)                                |Drama|War                  |Dina     |Murphy  |75 |Audriatown        |Non-Binary|
+|725   |820    |1.4   |1734205259291|Death in the Garden (Mort en ce jardin, La) (1956)|Drama                      |Mathew   |Predovic|25 |Lake Casandrahaven|Non-Binary|
+|217   |413    |2.6   |1734205259361|Airheads (1994)                                   |Comedy                     |Kieth    |Kunze   |49 |Emerychester      |Female    |
+|791   |518    |2.3   |1734205259432|Road to Wellville, The (1994)                     |Comedy                     |Earlie   |O'Conner|54 |Edwardport        |Male      |
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                             |genres                     |firstName|lastName|age|location          |gender    |partitionDate|
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+-------------+
+|982   |362    |2.8   |1734205258800|Jungle Book, The (1994)                           |Adventure|Children|Romance |Greg     |Mueller |31 |Spinkaside        |Male      |2024-12-15   |
+|194   |996    |1.7   |1734205258872|Last Man Standing (1996)                          |Action|Crime|Drama|Thriller|Wesley   |Wiza    |32 |Uptonburgh        |Non-Binary|2024-12-15   |
+|741   |571    |2.1   |1734205258942|Wedding Gift, The (1994)                          |Drama|Romance              |Chauncey |Sipes   |60 |East Aja          |Male      |2024-12-15   |
+|232   |147    |0.7   |1734205259010|Basketball Diaries, The (1995)                    |Drama                      |Angla    |Brakus  |35 |Johnathonland     |Female    |2024-12-15   |
+|190   |756    |1.1   |1734205259081|Carmen Miranda: Bananas Is My Business (1994)     |Documentary                |Bennett  |Rath    |24 |South Steve       |Male      |2024-12-15   |
+|332   |481    |4.5   |1734205259150|Kalifornia (1993)                                 |Drama|Thriller             |Craig    |Krajcik |47 |Aufderharland     |Non-Binary|2024-12-15   |
+|471   |41     |0.7   |1734205259220|Richard III (1995)                                |Drama|War                  |Dina     |Murphy  |75 |Audriatown        |Non-Binary|2024-12-15   |
+|725   |820    |1.4   |1734205259291|Death in the Garden (Mort en ce jardin, La) (1956)|Drama                      |Mathew   |Predovic|25 |Lake Casandrahaven|Non-Binary|2024-12-15   |
+|217   |413    |2.6   |1734205259361|Airheads (1994)                                   |Comedy                     |Kieth    |Kunze   |49 |Emerychester      |Female    |2024-12-15   |
+|791   |518    |2.3   |1734205259432|Road to Wellville, The (1994)                     |Comedy                     |Earlie   |O'Conner|54 |Edwardport        |Male      |2024-12-15   |
++------+-------+------+-------------+--------------------------------------------------+---------------------------+---------+--------+---+------------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                              |3.6      |1          |
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                                      |3.6      |2          |
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy                  |2.0      |1          |
+|808    |Alaska (1996)                                                               |Adventure|Children                         |2.45     |2          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller                      |3.85     |2          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |1.9      |1          |
+|360    |I Love Trouble (1994)                                                       |Action|Comedy                              |2.1      |2          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                                      |3.9      |1          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|2.95     |2          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance                       |3.95     |2          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.76     |156        |
+|Romance    |2.65     |244        |
+|Thriller   |2.83     |235        |
+|Adventure  |2.59     |116        |
+|Drama      |2.76     |685        |
+|War        |2.76     |47         |
+|Documentary|2.83     |46         |
+|Fantasy    |2.62     |58         |
+|Mystery    |2.75     |57         |
+|Musical    |2.53     |33         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|69 |Non-Binary|West Angelicamouth|2.5      |2          |
+|50 |Male      |Shirleyton        |0.85     |2          |
+|79 |Female    |West Salvatore    |2.7      |1          |
+|33 |Male      |East Syble        |1.3      |1          |
+|57 |Female    |Giovannashire     |4.03     |3          |
+|43 |Non-Binary|Cristystad        |3.7      |2          |
+|77 |Female    |Port Rosio        |2.2      |1          |
+|52 |Female    |Nicolasfurt       |0.85     |2          |
+|30 |Non-Binary|Schuliststad      |4.6      |1          |
+|60 |Female    |Schinnermouth     |1.8      |1          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 2 processed successfully
+24/12/15 01:14:04 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:14:08 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|950   |313    |4.1   |1734205349161|
+|267   |608    |2.7   |1734205349231|
+|198   |292    |2.1   |1734205349302|
+|776   |662    |4.1   |1734205349371|
+|732   |734    |3.3   |1734205349441|
+|541   |521    |1.3   |1734205349511|
+|208   |681    |5.0   |1734205349581|
+|517   |619    |3.3   |1734205349651|
+|864   |898    |2.0   |1734205349721|
+|822   |713    |3.2   |1734205349791|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+------------------------------------+----------------------------+
+|movieId|userId|rating|timestamp    |title                               |genres                      |
++-------+------+------+-------------+------------------------------------+----------------------------+
+|313    |950   |4.1   |1734205349161|Swan Princess, The (1994)           |Animation|Children          |
+|608    |267   |2.7   |1734205349231|Fargo (1996)                        |Comedy|Crime|Drama|Thriller |
+|292    |198   |2.1   |1734205349302|Outbreak (1995)                     |Action|Drama|Sci-Fi|Thriller|
+|662    |776   |4.1   |1734205349371|Fear (1996)                         |Thriller                    |
+|734    |732   |3.3   |1734205349441|Getting Away With Murder (1996)     |Comedy                      |
+|521    |541   |1.3   |1734205349511|Romeo Is Bleeding (1993)            |Crime|Thriller              |
+|681    |208   |5.0   |1734205349581|Coup de torchon (Clean Slate) (1981)|Crime                       |
+|619    |517   |3.3   |1734205349651|Ed (1996)                           |Comedy                      |
+|898    |864   |2.0   |1734205349721|Philadelphia Story, The (1940)      |Comedy|Drama|Romance        |
+|713    |822   |3.2   |1734205349791|Of Love and Shadows (1994)          |Drama                       |
++-------+------+------+-------------+------------------------------------+----------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+
+|userId|movieId|rating|timestamp    |title                               |genres                      |firstName|lastName |age|location       |gender    |
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+
+|950   |313    |4.1   |1734205349161|Swan Princess, The (1994)           |Animation|Children          |Temika   |Adams    |76 |West Bobby     |Male      |
+|267   |608    |2.7   |1734205349231|Fargo (1996)                        |Comedy|Crime|Drama|Thriller |Sherill  |Bayer    |66 |South Ashaville|Male      |
+|198   |292    |2.1   |1734205349302|Outbreak (1995)                     |Action|Drama|Sci-Fi|Thriller|Lance    |Ankunding|79 |Wuckertmouth   |Female    |
+|776   |662    |4.1   |1734205349371|Fear (1996)                         |Thriller                    |Agatha   |Ward     |33 |Lake Corinna   |Female    |
+|732   |734    |3.3   |1734205349441|Getting Away With Murder (1996)     |Comedy                      |Leona    |Schaefer |46 |Gerholdstad    |Male      |
+|541   |521    |1.3   |1734205349511|Romeo Is Bleeding (1993)            |Crime|Thriller              |Richard  |Ondricka |42 |Conceptionbury |Male      |
+|208   |681    |5.0   |1734205349581|Coup de torchon (Clean Slate) (1981)|Crime                       |Lon      |Kihn     |35 |Port Lowell    |Male      |
+|517   |619    |3.3   |1734205349651|Ed (1996)                           |Comedy                      |Marci    |Hudson   |74 |Hiltonmouth    |Female    |
+|864   |898    |2.0   |1734205349721|Philadelphia Story, The (1940)      |Comedy|Drama|Romance        |Elvina   |Corkery  |54 |New Monte      |Non-Binary|
+|822   |713    |3.2   |1734205349791|Of Love and Shadows (1994)          |Drama                       |Sang     |Casper   |32 |Port Georgianna|Male      |
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                               |genres                      |firstName|lastName |age|location       |gender    |partitionDate|
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+-------------+
+|950   |313    |4.1   |1734205349161|Swan Princess, The (1994)           |Animation|Children          |Temika   |Adams    |76 |West Bobby     |Male      |2024-12-15   |
+|267   |608    |2.7   |1734205349231|Fargo (1996)                        |Comedy|Crime|Drama|Thriller |Sherill  |Bayer    |66 |South Ashaville|Male      |2024-12-15   |
+|198   |292    |2.1   |1734205349302|Outbreak (1995)                     |Action|Drama|Sci-Fi|Thriller|Lance    |Ankunding|79 |Wuckertmouth   |Female    |2024-12-15   |
+|776   |662    |4.1   |1734205349371|Fear (1996)                         |Thriller                    |Agatha   |Ward     |33 |Lake Corinna   |Female    |2024-12-15   |
+|732   |734    |3.3   |1734205349441|Getting Away With Murder (1996)     |Comedy                      |Leona    |Schaefer |46 |Gerholdstad    |Male      |2024-12-15   |
+|541   |521    |1.3   |1734205349511|Romeo Is Bleeding (1993)            |Crime|Thriller              |Richard  |Ondricka |42 |Conceptionbury |Male      |2024-12-15   |
+|208   |681    |5.0   |1734205349581|Coup de torchon (Clean Slate) (1981)|Crime                       |Lon      |Kihn     |35 |Port Lowell    |Male      |2024-12-15   |
+|517   |619    |3.3   |1734205349651|Ed (1996)                           |Comedy                      |Marci    |Hudson   |74 |Hiltonmouth    |Female    |2024-12-15   |
+|864   |898    |2.0   |1734205349721|Philadelphia Story, The (1940)      |Comedy|Drama|Romance        |Elvina   |Corkery  |54 |New Monte      |Non-Binary|2024-12-15   |
+|822   |713    |3.2   |1734205349791|Of Love and Shadows (1994)          |Drama                       |Sang     |Casper   |32 |Port Georgianna|Male      |2024-12-15   |
++------+-------+------+-------------+------------------------------------+----------------------------+---------+---------+---+---------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                                      |3.45     |2          |
+|656    |Eddie (1996)                                                                |Comedy                                     |2.45     |2          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller                      |2.35     |2          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|2.1      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy            |1.3      |1          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama                          |2.3      |2          |
+|808    |Alaska (1996)                                                               |Adventure|Children                         |4.0      |1          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |3.23     |3          |
+|124    |Star Maker, The (Uomo delle stelle, L') (1995)                              |Drama                                      |1.2      |1          |
+|555    |True Romance (1993)                                                         |Crime|Thriller                             |1.8      |3          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.8      |152        |
+|Romance    |2.66     |217        |
+|Thriller   |2.64     |252        |
+|Adventure  |2.64     |140        |
+|Drama      |2.66     |670        |
+|War        |2.19     |41         |
+|Documentary|2.53     |37         |
+|Fantasy    |2.54     |64         |
+|Mystery    |2.81     |66         |
+|Musical    |2.85     |39         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|79 |Female    |West Salvatore    |2.8      |2          |
+|33 |Male      |East Syble        |3.1      |2          |
+|58 |Female    |Port Gil          |1.7      |1          |
+|69 |Non-Binary|West Angelicamouth|1.7      |1          |
+|77 |Female    |Port Rosio        |1.85     |2          |
+|66 |Non-Binary|Rauberg           |2.95     |2          |
+|70 |Female    |East Prudence     |2.8      |1          |
+|23 |Non-Binary|South Joslyn      |3.3      |1          |
+|23 |Non-Binary|Sinaberg          |3.65     |2          |
+|36 |Male      |East Bernieburgh  |3.65     |2          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 3 processed successfully
+24/12/15 01:16:04 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
+24/12/15 01:16:09 WARN CacheManager: Asked to cache already cached data.
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|430   |269    |3.6   |1734205440021|
+|42    |171    |2.6   |1734205440091|
+|879   |795    |1.2   |1734205440161|
+|326   |287    |4.7   |1734205440231|
+|378   |792    |4.8   |1734205440302|
+|996   |373    |3.2   |1734205440372|
+|808   |685    |4.5   |1734205440440|
+|928   |548    |1.3   |1734205440510|
+|347   |778    |1.2   |1734205440581|
+|690   |881    |1.6   |1734205440651|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+-------------------------------------------------------+-----------------------+
+|movieId|userId|rating|timestamp    |title                                                  |genres                 |
++-------+------+------+-------------+-------------------------------------------------------+-----------------------+
+|269    |430   |3.6   |1734205440021|My Crazy Life (Mi vida loca) (1993)                    |Drama                  |
+|171    |42    |2.6   |1734205440091|Jeffrey (1995)                                         |Comedy|Drama           |
+|795    |879   |1.2   |1734205440161|Somebody to Love (1994)                                |Drama                  |
+|287    |326   |4.7   |1734205440231|Nina Takes a Lover (1994)                              |Comedy|Romance         |
+|792    |378   |4.8   |1734205440302|Hungarian Fairy Tale, A (Hol volt, hol nem volt) (1987)|Fantasy                |
+|373    |996   |3.2   |1734205440372|Red Rock West (1992)                                   |Thriller               |
+|685    |808   |4.5   |1734205440440|It's My Party (1996)                                   |Drama                  |
+|548    |928   |1.3   |1734205440510|Terminal Velocity (1994)                               |Action|Mystery|Thriller|
+|778    |347   |1.2   |1734205440581|Trainspotting (1996)                                   |Comedy|Crime|Drama     |
+|881    |690   |1.6   |1734205440651|First Kid (1996)                                       |Children|Comedy        |
++-------+------+------+-------------+-------------------------------------------------------+-----------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+
+|userId|movieId|rating|timestamp    |title                                                  |genres                 |firstName|lastName  |age|location           |gender    |
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+
+|430   |269    |3.6   |1734205440021|My Crazy Life (Mi vida loca) (1993)                    |Drama                  |Norman   |Reichel   |21 |Pandoramouth       |Male      |
+|42    |171    |2.6   |1734205440091|Jeffrey (1995)                                         |Comedy|Drama           |Chet     |Price     |78 |North Thelmaborough|Male      |
+|879   |795    |1.2   |1734205440161|Somebody to Love (1994)                                |Drama                  |Odell    |Simonis   |53 |Sirenaburgh        |Male      |
+|326   |287    |4.7   |1734205440231|Nina Takes a Lover (1994)                              |Comedy|Romance         |Luigi    |Dibbert   |60 |Port Kelvin        |Non-Binary|
+|378   |792    |4.8   |1734205440302|Hungarian Fairy Tale, A (Hol volt, hol nem volt) (1987)|Fantasy                |Wilbur   |Prohaska  |77 |Mitchellmouth      |Female    |
+|996   |373    |3.2   |1734205440372|Red Rock West (1992)                                   |Thriller               |Celestina|Daugherty |63 |Stiedemannton      |Male      |
+|808   |685    |4.5   |1734205440440|It's My Party (1996)                                   |Drama                  |Luana    |Schmeler  |70 |Port Karl          |Non-Binary|
+|928   |548    |1.3   |1734205440510|Terminal Velocity (1994)                               |Action|Mystery|Thriller|Yvone    |King      |66 |Port Edmond        |Non-Binary|
+|347   |778    |1.2   |1734205440581|Trainspotting (1996)                                   |Comedy|Crime|Drama     |Belia    |Hirthe    |49 |Gottliebview       |Male      |
+|690   |881    |1.6   |1734205440651|First Kid (1996)                                       |Children|Comedy        |Pennie   |McLaughlin|68 |New Arturo         |Non-Binary|
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                                  |genres                 |firstName|lastName  |age|location           |gender    |partitionDate|
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+-------------+
+|430   |269    |3.6   |1734205440021|My Crazy Life (Mi vida loca) (1993)                    |Drama                  |Norman   |Reichel   |21 |Pandoramouth       |Male      |2024-12-15   |
+|42    |171    |2.6   |1734205440091|Jeffrey (1995)                                         |Comedy|Drama           |Chet     |Price     |78 |North Thelmaborough|Male      |2024-12-15   |
+|879   |795    |1.2   |1734205440161|Somebody to Love (1994)                                |Drama                  |Odell    |Simonis   |53 |Sirenaburgh        |Male      |2024-12-15   |
+|326   |287    |4.7   |1734205440231|Nina Takes a Lover (1994)                              |Comedy|Romance         |Luigi    |Dibbert   |60 |Port Kelvin        |Non-Binary|2024-12-15   |
+|378   |792    |4.8   |1734205440302|Hungarian Fairy Tale, A (Hol volt, hol nem volt) (1987)|Fantasy                |Wilbur   |Prohaska  |77 |Mitchellmouth      |Female    |2024-12-15   |
+|996   |373    |3.2   |1734205440372|Red Rock West (1992)                                   |Thriller               |Celestina|Daugherty |63 |Stiedemannton      |Male      |2024-12-15   |
+|808   |685    |4.5   |1734205440440|It's My Party (1996)                                   |Drama                  |Luana    |Schmeler  |70 |Port Karl          |Non-Binary|2024-12-15   |
+|928   |548    |1.3   |1734205440510|Terminal Velocity (1994)                               |Action|Mystery|Thriller|Yvone    |King      |66 |Port Edmond        |Non-Binary|2024-12-15   |
+|347   |778    |1.2   |1734205440581|Trainspotting (1996)                                   |Comedy|Crime|Drama     |Belia    |Hirthe    |49 |Gottliebview       |Male      |2024-12-15   |
+|690   |881    |1.6   |1734205440651|First Kid (1996)                                       |Children|Comedy        |Pennie   |McLaughlin|68 |New Arturo         |Non-Binary|2024-12-15   |
++------+-------+------+-------------+-------------------------------------------------------+-----------------------+---------+----------+---+-------------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                              |1.45     |2          |
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy                  |4.5      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy            |2.7      |2          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama                          |3.17     |6          |
+|808    |Alaska (1996)                                                               |Adventure|Children                         |0.5      |1          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|1.8      |1          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |3.63     |3          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller                      |1.2      |1          |
+|360    |I Love Trouble (1994)                                                       |Action|Comedy                              |2.85     |2          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance                       |2.27     |3          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.68     |192        |
+|Romance    |2.67     |333        |
+|Thriller   |2.68     |292        |
+|Adventure  |2.77     |144        |
+|Drama      |2.7      |890        |
+|War        |3.02     |52         |
+|Documentary|2.81     |73         |
+|Fantasy    |2.82     |75         |
+|Mystery    |2.79     |90         |
+|Musical    |2.6      |58         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|69 |Non-Binary|West Angelicamouth|3.9      |1          |
+|33 |Male      |East Syble        |2.47     |3          |
+|79 |Female    |West Salvatore    |3.7      |1          |
+|43 |Non-Binary|Cristystad        |4.4      |1          |
+|77 |Female    |Port Rosio        |2.55     |2          |
+|57 |Female    |Giovannashire     |3.55     |2          |
+|30 |Non-Binary|Schuliststad      |3.15     |2          |
+|66 |Non-Binary|Rauberg           |3.5      |2          |
+|52 |Female    |Nicolasfurt       |3.9      |1          |
+|23 |Non-Binary|Sinaberg          |4.0      |1          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 4 processed successfully
+24/12/15 01:18:04 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:18:08 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|149   |972    |3.0   |1734205560062|
+|445   |817    |3.8   |1734205560132|
+|792   |643    |4.7   |1734205560202|
+|706   |317    |3.0   |1734205560271|
+|386   |867    |2.7   |1734205560342|
+|972   |274    |0.7   |1734205560412|
+|632   |460    |3.6   |1734205560482|
+|598   |591    |3.6   |1734205560551|
+|483   |13     |2.9   |1734205560620|
+|469   |566    |4.6   |1734205560692|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+-------------------------------------+----------------------------+
+|movieId|userId|rating|timestamp    |title                                |genres                      |
++-------+------+------+-------------+-------------------------------------+----------------------------+
+|972    |149   |3.0   |1734205560062|Last Time I Saw Paris, The (1954)    |Drama                       |
+|643    |792   |4.7   |1734205560202|Peanuts - Die Bank zahlt alles (1996)|Comedy                      |
+|317    |706   |3.0   |1734205560271|Santa Clause, The (1994)             |Comedy|Drama|Fantasy        |
+|867    |386   |2.7   |1734205560342|Carpool (1996)                       |Comedy|Crime                |
+|274    |972   |0.7   |1734205560412|Man of the House (1995)              |Comedy                      |
+|460    |632   |3.6   |1734205560482|Getting Even with Dad (1994)         |Comedy                      |
+|591    |598   |3.6   |1734205560551|Tough and Deadly (1995)              |Action|Drama|Thriller       |
+|13     |483   |2.9   |1734205560620|Balto (1995)                         |Adventure|Animation|Children|
+|566    |469   |4.6   |1734205560692|Naked in New York (1994)             |Comedy|Romance              |
+|57     |344   |2.8   |1734205560762|Home for the Holidays (1995)         |Drama                       |
++-------+------+------+-------------+-------------------------------------+----------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+
+|userId|movieId|rating|timestamp    |title                                |genres                      |firstName |lastName|age|location            |gender    |
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+
+|149   |972    |3.0   |1734205560062|Last Time I Saw Paris, The (1954)    |Drama                       |Georgene  |Schmitt |46 |New Miquelview      |Non-Binary|
+|792   |643    |4.7   |1734205560202|Peanuts - Die Bank zahlt alles (1996)|Comedy                      |Leonore   |Franecki|43 |East Jereport       |Male      |
+|706   |317    |3.0   |1734205560271|Santa Clause, The (1994)             |Comedy|Drama|Fantasy        |Bernice   |Walter  |59 |North Jerrold       |Male      |
+|386   |867    |2.7   |1734205560342|Carpool (1996)                       |Comedy|Crime                |Rex       |Legros  |40 |Juniormouth         |Non-Binary|
+|972   |274    |0.7   |1734205560412|Man of the House (1995)              |Comedy                      |Bert      |Grant   |47 |South Ryan          |Male      |
+|632   |460    |3.6   |1734205560482|Getting Even with Dad (1994)         |Comedy                      |Gus       |Rath    |64 |South Brendonchester|Female    |
+|598   |591    |3.6   |1734205560551|Tough and Deadly (1995)              |Action|Drama|Thriller       |Lyndia    |Howe    |33 |Port Philip         |Male      |
+|483   |13     |2.9   |1734205560620|Balto (1995)                         |Adventure|Animation|Children|Altagracia|Lebsack |75 |Schneiderton        |Non-Binary|
+|469   |566    |4.6   |1734205560692|Naked in New York (1994)             |Comedy|Romance              |Billie    |Medhurst|62 |Beattymouth         |Male      |
+|344   |57     |2.8   |1734205560762|Home for the Holidays (1995)         |Drama                       |Eloy      |Schiller|74 |Jasonview           |Female    |
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                |genres                      |firstName |lastName|age|location            |gender    |partitionDate|
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+-------------+
+|149   |972    |3.0   |1734205560062|Last Time I Saw Paris, The (1954)    |Drama                       |Georgene  |Schmitt |46 |New Miquelview      |Non-Binary|2024-12-15   |
+|792   |643    |4.7   |1734205560202|Peanuts - Die Bank zahlt alles (1996)|Comedy                      |Leonore   |Franecki|43 |East Jereport       |Male      |2024-12-15   |
+|706   |317    |3.0   |1734205560271|Santa Clause, The (1994)             |Comedy|Drama|Fantasy        |Bernice   |Walter  |59 |North Jerrold       |Male      |2024-12-15   |
+|386   |867    |2.7   |1734205560342|Carpool (1996)                       |Comedy|Crime                |Rex       |Legros  |40 |Juniormouth         |Non-Binary|2024-12-15   |
+|972   |274    |0.7   |1734205560412|Man of the House (1995)              |Comedy                      |Bert      |Grant   |47 |South Ryan          |Male      |2024-12-15   |
+|632   |460    |3.6   |1734205560482|Getting Even with Dad (1994)         |Comedy                      |Gus       |Rath    |64 |South Brendonchester|Female    |2024-12-15   |
+|598   |591    |3.6   |1734205560551|Tough and Deadly (1995)              |Action|Drama|Thriller       |Lyndia    |Howe    |33 |Port Philip         |Male      |2024-12-15   |
+|483   |13     |2.9   |1734205560620|Balto (1995)                         |Adventure|Animation|Children|Altagracia|Lebsack |75 |Schneiderton        |Non-Binary|2024-12-15   |
+|469   |566    |4.6   |1734205560692|Naked in New York (1994)             |Comedy|Romance              |Billie    |Medhurst|62 |Beattymouth         |Male      |2024-12-15   |
+|344   |57     |2.8   |1734205560762|Home for the Holidays (1995)         |Drama                       |Eloy      |Schiller|74 |Jasonview           |Female    |2024-12-15   |
++------+-------+------+-------------+-------------------------------------+----------------------------+----------+--------+---+--------------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                         |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller          |3.03     |3          |
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                          |4.7      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy|2.25     |2          |
+|360    |I Love Trouble (1994)                                                       |Action|Comedy                  |2.98     |5          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama              |1.8      |1          |
+|656    |Eddie (1996)                                                                |Comedy                         |4.1      |1          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller          |3.13     |3          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                 |1.8      |2          |
+|395    |Desert Winds (1995)                                                         |Drama|Fantasy|Romance          |3.05     |2          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                          |3.15     |2          |
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.81     |200        |
+|Romance    |2.76     |318        |
+|Thriller   |2.85     |336        |
+|Adventure  |2.93     |147        |
+|Drama      |2.72     |882        |
+|War        |2.89     |56         |
+|Documentary|2.76     |62         |
+|Fantasy    |2.68     |89         |
+|Mystery    |2.88     |96         |
+|Musical    |2.76     |48         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|58 |Female    |Port Gil          |2.5      |3          |
+|33 |Male      |East Syble        |2.55     |4          |
+|69 |Non-Binary|West Angelicamouth|3.4      |5          |
+|50 |Male      |Shirleyton        |3.53     |4          |
+|30 |Non-Binary|Schuliststad      |3.0      |3          |
+|66 |Non-Binary|Rauberg           |3.3      |3          |
+|77 |Female    |Port Rosio        |3.8      |1          |
+|52 |Female    |Nicolasfurt       |3.23     |4          |
+|57 |Female    |Giovannashire     |1.33     |3          |
+|43 |Non-Binary|Cristystad        |0.8      |1          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 5 processed successfully
+24/12/15 01:20:03 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:20:06 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|522   |325    |2.8   |1734205680032|
+|628   |132    |1.6   |1734205680102|
+|125   |419    |1.8   |1734205680172|
+|840   |846    |1.4   |1734205680242|
+|3     |963    |2.5   |1734205680312|
+|44    |281    |1.4   |1734205680382|
+|31    |77     |2.5   |1734205680452|
+|245   |847    |3.8   |1734205680523|
+|874   |467    |2.9   |1734205680592|
+|11    |676    |2.2   |1734205680661|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+-------------------------------------+--------------------+
+|movieId|userId|rating|timestamp    |title                                |genres              |
++-------+------+------+-------------+-------------------------------------+--------------------+
+|325    |522   |2.8   |1734205680032|National Lampoon's Senior Trip (1995)|Comedy              |
+|132    |628   |1.6   |1734205680102|Jade (1995)                          |Thriller            |
+|419    |125   |1.8   |1734205680172|Beverly Hillbillies, The (1993)      |Comedy              |
+|846    |840   |1.4   |1734205680242|Flirt (1995)                         |Drama               |
+|963    |3     |2.5   |1734205680312|Inspector General, The (1949)        |Musical             |
+|281    |44    |1.4   |1734205680382|Nobody's Fool (1994)                 |Comedy|Drama|Romance|
+|77     |31    |2.5   |1734205680452|Nico Icon (1995)                     |Documentary         |
+|847    |245   |3.8   |1734205680523|Big Squeeze, The (1996)              |Comedy|Drama        |
+|467    |874   |2.9   |1734205680592|Live Nude Girls (1995)               |Comedy              |
+|676    |11    |2.2   |1734205680661|They Bite (1996)                     |Comedy|Horror|Sci-Fi|
++-------+------+------+-------------+-------------------------------------+--------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+
+|userId|movieId|rating|timestamp    |title                                |genres              |firstName|lastName |age|location     |gender    |
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+
+|522   |325    |2.8   |1734205680032|National Lampoon's Senior Trip (1995)|Comedy              |Dedra    |Ratke    |69 |Budfurt      |Male      |
+|628   |132    |1.6   |1734205680102|Jade (1995)                          |Thriller            |Reginald |Green    |20 |Ronnymouth   |Non-Binary|
+|125   |419    |1.8   |1734205680172|Beverly Hillbillies, The (1993)      |Comedy              |Mario    |Douglas  |57 |Maxwellburgh |Male      |
+|840   |846    |1.4   |1734205680242|Flirt (1995)                         |Drama               |Jacinto  |Schaden  |37 |Erickmouth   |Male      |
+|3     |963    |2.5   |1734205680312|Inspector General, The (1949)        |Musical             |Larae    |Haley    |23 |Codyfurt     |Female    |
+|44    |281    |1.4   |1734205680382|Nobody's Fool (1994)                 |Comedy|Drama|Romance|Alonso   |Stamm    |74 |West Harry   |Non-Binary|
+|31    |77     |2.5   |1734205680452|Nico Icon (1995)                     |Documentary         |Daniell  |Halvorson|73 |Vivaview     |Female    |
+|245   |847    |3.8   |1734205680523|Big Squeeze, The (1996)              |Comedy|Drama        |Beverlee |Wiza     |43 |North Winford|Male      |
+|874   |467    |2.9   |1734205680592|Live Nude Girls (1995)               |Comedy              |Alexis   |Rolfson  |40 |Lake Elliot  |Male      |
+|11    |676    |2.2   |1734205680661|They Bite (1996)                     |Comedy|Horror|Sci-Fi|Olin     |Green    |40 |Colemouth    |Non-Binary|
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                |genres              |firstName|lastName |age|location     |gender    |partitionDate|
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+-------------+
+|522   |325    |2.8   |1734205680032|National Lampoon's Senior Trip (1995)|Comedy              |Dedra    |Ratke    |69 |Budfurt      |Male      |2024-12-15   |
+|628   |132    |1.6   |1734205680102|Jade (1995)                          |Thriller            |Reginald |Green    |20 |Ronnymouth   |Non-Binary|2024-12-15   |
+|125   |419    |1.8   |1734205680172|Beverly Hillbillies, The (1993)      |Comedy              |Mario    |Douglas  |57 |Maxwellburgh |Male      |2024-12-15   |
+|840   |846    |1.4   |1734205680242|Flirt (1995)                         |Drama               |Jacinto  |Schaden  |37 |Erickmouth   |Male      |2024-12-15   |
+|3     |963    |2.5   |1734205680312|Inspector General, The (1949)        |Musical             |Larae    |Haley    |23 |Codyfurt     |Female    |2024-12-15   |
+|44    |281    |1.4   |1734205680382|Nobody's Fool (1994)                 |Comedy|Drama|Romance|Alonso   |Stamm    |74 |West Harry   |Non-Binary|2024-12-15   |
+|31    |77     |2.5   |1734205680452|Nico Icon (1995)                     |Documentary         |Daniell  |Halvorson|73 |Vivaview     |Female    |2024-12-15   |
+|245   |847    |3.8   |1734205680523|Big Squeeze, The (1996)              |Comedy|Drama        |Beverlee |Wiza     |43 |North Winford|Male      |2024-12-15   |
+|874   |467    |2.9   |1734205680592|Live Nude Girls (1995)               |Comedy              |Alexis   |Rolfson  |40 |Lake Elliot  |Male      |2024-12-15   |
+|11    |676    |2.2   |1734205680661|They Bite (1996)                     |Comedy|Horror|Sci-Fi|Olin     |Green    |40 |Colemouth    |Non-Binary|2024-12-15   |
++------+-------+------+-------------+-------------------------------------+--------------------+---------+---------+---+-------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                         |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                  |2.75     |6          |
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller          |1.4      |2          |
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                          |1.4      |3          |
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy      |2.45     |2          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy|2.15     |2          |
+|808    |Alaska (1996)                                                               |Adventure|Children             |3.47     |3          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                 |2.28     |4          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller          |3.43     |4          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                          |1.6      |1          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama              |2.7      |3          |
++-------+----------------------------------------------------------------------------+-------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.76     |183        |
+|Romance    |2.7      |348        |
+|Thriller   |2.79     |305        |
+|Adventure  |2.7      |185        |
+|Drama      |2.77     |884        |
+|War        |2.46     |59         |
+|Documentary|2.64     |63         |
+|Fantasy    |2.65     |79         |
+|Mystery    |2.66     |98         |
+|Musical    |2.7      |55         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+--------------+---------+-----------+
+|age|gender    |location      |avgRating|ratingCount|
++---+----------+--------------+---------+-----------+
+|33 |Male      |East Syble    |3.5      |2          |
+|79 |Female    |West Salvatore|2.97     |4          |
+|50 |Male      |Shirleyton    |1.25     |2          |
+|58 |Female    |Port Gil      |2.4      |2          |
+|66 |Non-Binary|Rauberg       |3.13     |3          |
+|57 |Female    |Giovannashire |2.25     |2          |
+|30 |Non-Binary|Schuliststad  |2.52     |5          |
+|43 |Non-Binary|Cristystad    |3.4      |1          |
+|77 |Female    |Port Rosio    |1.7      |1          |
+|52 |Female    |Nicolasfurt   |2.0      |2          |
++---+----------+--------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 6 processed successfully
+24/12/15 01:22:03 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:22:09 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|329   |469    |2.5   |1734205800042|
+|472   |661    |2.3   |1734205800112|
+|684   |8      |3.8   |1734205800182|
+|474   |649    |0.7   |1734205800253|
+|891   |182    |4.3   |1734205800322|
+|297   |371    |4.5   |1734205800392|
+|10    |18     |0.6   |1734205800462|
+|660   |965    |4.1   |1734205800532|
+|885   |850    |2.5   |1734205800600|
+|902   |412    |2.3   |1734205800672|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+----------------------------------+--------------------------------------------+
+|movieId|userId|rating|timestamp    |title                             |genres                                      |
++-------+------+------+-------------+----------------------------------+--------------------------------------------+
+|469    |329   |2.5   |1734205800042|House of the Spirits, The (1993)  |Drama|Romance                               |
+|661    |472   |2.3   |1734205800112|James and the Giant Peach (1996)  |Adventure|Animation|Children|Fantasy|Musical|
+|8      |684   |3.8   |1734205800182|Tom and Huck (1995)               |Adventure|Children                          |
+|649    |474   |0.7   |1734205800253|Cold Fever (Á köldum klaka) (1995)|Comedy|Drama                                |
+|182    |891   |4.3   |1734205800322|Moonlight and Valentino (1995)    |Drama|Romance                               |
+|371    |297   |4.5   |1734205800392|Paper, The (1994)                 |Comedy|Drama                                |
+|18     |10    |0.6   |1734205800462|Four Rooms (1995)                 |Comedy                                      |
+|965    |660   |4.1   |1734205800532|39 Steps, The (1935)              |Drama|Mystery|Thriller                      |
+|850    |885   |2.5   |1734205800600|Cyclo (Xich lo) (1995)            |Crime|Drama                                 |
+|412    |902   |2.3   |1734205800672|Age of Innocence, The (1993)      |Drama                                       |
++-------+------+------+-------------+----------------------------------+--------------------------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+
+|userId|movieId|rating|timestamp    |title                             |genres                                      |firstName|lastName |age|location           |gender    |
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+
+|329   |469    |2.5   |1734205800042|House of the Spirits, The (1993)  |Drama|Romance                               |Stephane |Hayes    |67 |North Synthia      |Female    |
+|472   |661    |2.3   |1734205800112|James and the Giant Peach (1996)  |Adventure|Animation|Children|Fantasy|Musical|Regenia  |Crist    |61 |Johnnieshire       |Male      |
+|684   |8      |3.8   |1734205800182|Tom and Huck (1995)               |Adventure|Children                          |Chara    |Bechtelar|49 |Denesikland        |Non-Binary|
+|474   |649    |0.7   |1734205800253|Cold Fever (Á köldum klaka) (1995)|Comedy|Drama                                |Clarence |Reichel  |46 |North Reytown      |Non-Binary|
+|891   |182    |4.3   |1734205800322|Moonlight and Valentino (1995)    |Drama|Romance                               |Herman   |Rosenbaum|29 |North Rileyport    |Male      |
+|297   |371    |4.5   |1734205800392|Paper, The (1994)                 |Comedy|Drama                                |Art      |Purdy    |53 |South Regenachester|Non-Binary|
+|10    |18     |0.6   |1734205800462|Four Rooms (1995)                 |Comedy                                      |Jackie   |Gleichner|18 |Port Cesarhaven    |Male      |
+|660   |965    |4.1   |1734205800532|39 Steps, The (1935)              |Drama|Mystery|Thriller                      |Felix    |Reichert |75 |Jaquelineland      |Non-Binary|
+|885   |850    |2.5   |1734205800600|Cyclo (Xich lo) (1995)            |Crime|Drama                                 |Jen      |Stracke  |58 |Port Gil           |Female    |
+|902   |412    |2.3   |1734205800672|Age of Innocence, The (1993)      |Drama                                       |Lacy     |Homenick |49 |Rutherfordshire    |Female    |
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                             |genres                                      |firstName|lastName |age|location           |gender    |partitionDate|
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+-------------+
+|329   |469    |2.5   |1734205800042|House of the Spirits, The (1993)  |Drama|Romance                               |Stephane |Hayes    |67 |North Synthia      |Female    |2024-12-15   |
+|472   |661    |2.3   |1734205800112|James and the Giant Peach (1996)  |Adventure|Animation|Children|Fantasy|Musical|Regenia  |Crist    |61 |Johnnieshire       |Male      |2024-12-15   |
+|684   |8      |3.8   |1734205800182|Tom and Huck (1995)               |Adventure|Children                          |Chara    |Bechtelar|49 |Denesikland        |Non-Binary|2024-12-15   |
+|474   |649    |0.7   |1734205800253|Cold Fever (Á köldum klaka) (1995)|Comedy|Drama                                |Clarence |Reichel  |46 |North Reytown      |Non-Binary|2024-12-15   |
+|891   |182    |4.3   |1734205800322|Moonlight and Valentino (1995)    |Drama|Romance                               |Herman   |Rosenbaum|29 |North Rileyport    |Male      |2024-12-15   |
+|297   |371    |4.5   |1734205800392|Paper, The (1994)                 |Comedy|Drama                                |Art      |Purdy    |53 |South Regenachester|Non-Binary|2024-12-15   |
+|10    |18     |0.6   |1734205800462|Four Rooms (1995)                 |Comedy                                      |Jackie   |Gleichner|18 |Port Cesarhaven    |Male      |2024-12-15   |
+|660   |965    |4.1   |1734205800532|39 Steps, The (1935)              |Drama|Mystery|Thriller                      |Felix    |Reichert |75 |Jaquelineland      |Non-Binary|2024-12-15   |
+|885   |850    |2.5   |1734205800600|Cyclo (Xich lo) (1995)            |Crime|Drama                                 |Jen      |Stracke  |58 |Port Gil           |Female    |2024-12-15   |
+|902   |412    |2.3   |1734205800672|Age of Innocence, The (1993)      |Drama                                       |Lacy     |Homenick |49 |Rutherfordshire    |Female    |2024-12-15   |
++------+-------+------+-------------+----------------------------------+--------------------------------------------+---------+---------+---+-------------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                                      |2.1      |2          |
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller                      |0.85     |2          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |4.2      |1          |
+|656    |Eddie (1996)                                                                |Comedy                                     |3.2      |2          |
+|395    |Desert Winds (1995)                                                         |Drama|Fantasy|Romance                      |2.95     |2          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|2.15     |4          |
+|360    |I Love Trouble (1994)                                                       |Action|Comedy                              |2.45     |2          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                                      |2.1      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy            |1.96     |5          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance                       |3.65     |2          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.78     |206        |
+|Romance    |2.84     |359        |
+|Thriller   |2.72     |273        |
+|Adventure  |2.92     |184        |
+|Drama      |2.78     |910        |
+|War        |2.85     |50         |
+|Documentary|2.95     |61         |
+|Fantasy    |2.71     |82         |
+|Mystery    |2.82     |103        |
+|Musical    |2.72     |58         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+--------------+---------+-----------+
+|age|gender    |location      |avgRating|ratingCount|
++---+----------+--------------+---------+-----------+
+|58 |Female    |Port Gil      |2.27     |3          |
+|33 |Male      |East Syble    |2.4      |4          |
+|50 |Male      |Shirleyton    |4.4      |1          |
+|79 |Female    |West Salvatore|2.45     |2          |
+|52 |Female    |Nicolasfurt   |1.2      |3          |
+|30 |Non-Binary|Schuliststad  |3.13     |3          |
+|77 |Female    |Port Rosio    |2.8      |1          |
+|57 |Female    |Giovannashire |4.4      |1          |
+|23 |Non-Binary|South Joslyn  |1.67     |3          |
+|60 |Female    |Schinnermouth |2.72     |4          |
++---+----------+--------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 7 processed successfully
+24/12/15 01:24:04 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
+24/12/15 01:24:09 WARN CacheManager: Asked to cache already cached data.
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|370   |65     |2.6   |1734205920013|
+|815   |121    |2.0   |1734205920082|
+|402   |688    |2.1   |1734205920152|
+|48    |674    |3.8   |1734205920220|
+|152   |215    |1.3   |1734205920293|
+|524   |845    |1.0   |1734205920362|
+|546   |474    |4.3   |1734205920433|
+|999   |119    |1.9   |1734205920501|
+|143   |640    |4.5   |1734205920572|
+|123   |135    |1.9   |1734205920643|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+---------------------------------------------------+---------------------------+
+|movieId|userId|rating|timestamp    |title                                              |genres                     |
++-------+------+------+-------------+---------------------------------------------------+---------------------------+
+|65     |370   |2.6   |1734205920013|Bio-Dome (1996)                                    |Comedy                     |
+|121    |815   |2.0   |1734205920082|Boys of St. Vincent, The (1992)                    |Drama                      |
+|688    |402   |2.1   |1734205920152|Operation Dumbo Drop (1995)                        |Action|Adventure|Comedy|War|
+|674    |48    |3.8   |1734205920220|Barbarella (1968)                                  |Adventure|Comedy|Sci-Fi    |
+|215    |152   |1.3   |1734205920293|Before Sunrise (1995)                              |Drama|Romance              |
+|845    |524   |1.0   |1734205920362|Day the Sun Turned Cold, The (Tianguo niezi) (1994)|Drama                      |
+|474    |546   |4.3   |1734205920433|In the Line of Fire (1993)                         |Action|Thriller            |
+|119    |999   |1.9   |1734205920501|Steal Big, Steal Little (1995)                     |Comedy                     |
+|640    |143   |4.5   |1734205920572|Diabolique (1996)                                  |Drama|Thriller             |
+|135    |123   |1.9   |1734205920643|Down Periscope (1996)                              |Comedy                     |
++-------+------+------+-------------+---------------------------------------------------+---------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+
+|userId|movieId|rating|timestamp    |title                                              |genres                     |firstName|lastName   |age|location         |gender    |
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+
+|370   |65     |2.6   |1734205920013|Bio-Dome (1996)                                    |Comedy                     |Sonya    |Kunde      |56 |South Randallland|Male      |
+|815   |121    |2.0   |1734205920082|Boys of St. Vincent, The (1992)                    |Drama                      |Charleen |Weimann    |70 |Weldonbury       |Male      |
+|402   |688    |2.1   |1734205920152|Operation Dumbo Drop (1995)                        |Action|Adventure|Comedy|War|Orval    |Huel       |57 |Sanfordport      |Male      |
+|48    |674    |3.8   |1734205920220|Barbarella (1968)                                  |Adventure|Comedy|Sci-Fi    |Geraldine|Greenfelder|22 |Marrytown        |Male      |
+|152   |215    |1.3   |1734205920293|Before Sunrise (1995)                              |Drama|Romance              |Rosalie  |Hansen     |74 |Ronnieview       |Non-Binary|
+|524   |845    |1.0   |1734205920362|Day the Sun Turned Cold, The (Tianguo niezi) (1994)|Drama                      |Dung     |Ondricka   |74 |South Enriqueta  |Male      |
+|546   |474    |4.3   |1734205920433|In the Line of Fire (1993)                         |Action|Thriller            |Nguyet   |Huels      |52 |Lake Carrie      |Non-Binary|
+|999   |119    |1.9   |1734205920501|Steal Big, Steal Little (1995)                     |Comedy                     |Basil    |Kirlin     |66 |Lake Guillermo   |Male      |
+|143   |640    |4.5   |1734205920572|Diabolique (1996)                                  |Drama|Thriller             |Carmina  |Carroll    |24 |Kristineborough  |Non-Binary|
+|123   |135    |1.9   |1734205920643|Down Periscope (1996)                              |Comedy                     |Emmett   |Hansen     |22 |Marcelinaport    |Non-Binary|
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                              |genres                     |firstName|lastName   |age|location         |gender    |partitionDate|
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+-------------+
+|370   |65     |2.6   |1734205920013|Bio-Dome (1996)                                    |Comedy                     |Sonya    |Kunde      |56 |South Randallland|Male      |2024-12-15   |
+|815   |121    |2.0   |1734205920082|Boys of St. Vincent, The (1992)                    |Drama                      |Charleen |Weimann    |70 |Weldonbury       |Male      |2024-12-15   |
+|402   |688    |2.1   |1734205920152|Operation Dumbo Drop (1995)                        |Action|Adventure|Comedy|War|Orval    |Huel       |57 |Sanfordport      |Male      |2024-12-15   |
+|48    |674    |3.8   |1734205920220|Barbarella (1968)                                  |Adventure|Comedy|Sci-Fi    |Geraldine|Greenfelder|22 |Marrytown        |Male      |2024-12-15   |
+|152   |215    |1.3   |1734205920293|Before Sunrise (1995)                              |Drama|Romance              |Rosalie  |Hansen     |74 |Ronnieview       |Non-Binary|2024-12-15   |
+|524   |845    |1.0   |1734205920362|Day the Sun Turned Cold, The (Tianguo niezi) (1994)|Drama                      |Dung     |Ondricka   |74 |South Enriqueta  |Male      |2024-12-15   |
+|546   |474    |4.3   |1734205920433|In the Line of Fire (1993)                         |Action|Thriller            |Nguyet   |Huels      |52 |Lake Carrie      |Non-Binary|2024-12-15   |
+|999   |119    |1.9   |1734205920501|Steal Big, Steal Little (1995)                     |Comedy                     |Basil    |Kirlin     |66 |Lake Guillermo   |Male      |2024-12-15   |
+|143   |640    |4.5   |1734205920572|Diabolique (1996)                                  |Drama|Thriller             |Carmina  |Carroll    |24 |Kristineborough  |Non-Binary|2024-12-15   |
+|123   |135    |1.9   |1734205920643|Down Periscope (1996)                              |Comedy                     |Emmett   |Hansen     |22 |Marcelinaport    |Non-Binary|2024-12-15   |
++------+-------+------+-------------+---------------------------------------------------+---------------------------+---------+-----------+---+-----------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------+---------+-----------+
+|movieId|title                                                                       |genres                   |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------+---------+-----------+
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                    |0.6      |1          |
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance            |3.5      |4          |
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy|2.7      |1          |
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller    |4.4      |1          |
+|808    |Alaska (1996)                                                               |Adventure|Children       |2.38     |5          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama        |1.9      |3          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance     |2.0      |3          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                    |2.9      |4          |
+|360    |I Love Trouble (1994)                                                       |Action|Comedy            |3.23     |3          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy           |3.6      |2          |
++-------+----------------------------------------------------------------------------+-------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.84     |160        |
+|Romance    |2.69     |356        |
+|Thriller   |2.77     |281        |
+|Adventure  |2.68     |180        |
+|Drama      |2.76     |855        |
+|War        |2.84     |60         |
+|Documentary|2.8      |58         |
+|Fantasy    |2.82     |88         |
+|Mystery    |2.84     |86         |
+|Musical    |2.52     |41         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|79 |Female    |West Salvatore    |2.5      |2          |
+|50 |Male      |Shirleyton        |2.43     |3          |
+|58 |Female    |Port Gil          |2.4      |1          |
+|69 |Non-Binary|West Angelicamouth|1.5      |1          |
+|52 |Female    |Nicolasfurt       |3.1      |1          |
+|43 |Non-Binary|Cristystad        |2.68     |4          |
+|30 |Non-Binary|Schuliststad      |2.85     |2          |
+|66 |Non-Binary|Rauberg           |2.5      |1          |
+|77 |Female    |Port Rosio        |4.25     |2          |
+|23 |Non-Binary|South Joslyn      |3.27     |4          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 8 processed successfully
+24/12/15 01:26:04 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:26:09 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|139   |545    |4.3   |1734206040066|
+|644   |380    |2.3   |1734206040137|
+|496   |363    |3.1   |1734206040206|
+|243   |412    |4.3   |1734206040275|
+|887   |162    |2.6   |1734206040347|
+|811   |709    |2.8   |1734206040416|
+|497   |990    |3.3   |1734206040486|
+|43    |687    |3.8   |1734206040557|
+|337   |33     |2.2   |1734206040626|
+|265   |495    |2.1   |1734206040695|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+
+|movieId|userId|rating|timestamp    |title                                                                                             |genres                                     |
++-------+------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+
+|380    |644   |2.3   |1734206040137|True Lies (1994)                                                                                  |Action|Adventure|Comedy|Romance|Thriller   |
+|363    |496   |3.1   |1734206040206|Wonderful, Horrible Life of Leni Riefenstahl, The (Macht der Bilder: Leni Riefenstahl, Die) (1993)|Documentary                                |
+|412    |243   |4.3   |1734206040275|Age of Innocence, The (1993)                                                                      |Drama                                      |
+|162    |887   |2.6   |1734206040347|Crumb (1994)                                                                                      |Documentary                                |
+|709    |811   |2.8   |1734206040416|Oliver & Company (1988)                                                                           |Adventure|Animation|Children|Comedy|Musical|
+|990    |497   |3.3   |1734206040486|Maximum Risk (1996)                                                                               |Action|Adventure|Thriller                  |
+|687    |43    |3.8   |1734206040557|Country Life (1994)                                                                               |Drama|Romance                              |
+|33     |337   |2.2   |1734206040626|Wings of Courage (1995)                                                                           |Adventure|Romance|IMAX                     |
+|495    |265   |2.1   |1734206040695|In the Realm of the Senses (Ai no corrida) (1976)                                                 |Drama                                      |
+|152    |243   |3.4   |1734206040766|Addiction, The (1995)                                                                             |Drama|Horror                               |
++-------+------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+
+|userId|movieId|rating|timestamp    |title                                                                                             |genres                                     |firstName|lastName |age|location         |gender    |
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+
+|644   |380    |2.3   |1734206040137|True Lies (1994)                                                                                  |Action|Adventure|Comedy|Romance|Thriller   |Cliff    |Dickinson|76 |Walshbury        |Male      |
+|496   |363    |3.1   |1734206040206|Wonderful, Horrible Life of Leni Riefenstahl, The (Macht der Bilder: Leni Riefenstahl, Die) (1993)|Documentary                                |Ronny    |Rohan    |31 |Lake Ken         |Non-Binary|
+|243   |412    |4.3   |1734206040275|Age of Innocence, The (1993)                                                                      |Drama                                      |Leif     |DuBuque  |75 |Refugiaburgh     |Female    |
+|887   |162    |2.6   |1734206040347|Crumb (1994)                                                                                      |Documentary                                |Caron    |Fay      |28 |Lake Eugeniomouth|Female    |
+|811   |709    |2.8   |1734206040416|Oliver & Company (1988)                                                                           |Adventure|Animation|Children|Comedy|Musical|Armando  |Reinger  |36 |Port Benburgh    |Male      |
+|497   |990    |3.3   |1734206040486|Maximum Risk (1996)                                                                               |Action|Adventure|Thriller                  |Ross     |Tromp    |47 |New Lavoneview   |Male      |
+|43    |687    |3.8   |1734206040557|Country Life (1994)                                                                               |Drama|Romance                              |Sherise  |Kling    |37 |South Preston    |Male      |
+|337   |33     |2.2   |1734206040626|Wings of Courage (1995)                                                                           |Adventure|Romance|IMAX                     |Blythe   |Hyatt    |33 |Lake Harrisonstad|Female    |
+|265   |495    |2.1   |1734206040695|In the Realm of the Senses (Ai no corrida) (1976)                                                 |Drama                                      |Madaline |Mann     |79 |West Tandraville |Male      |
+|243   |152    |3.4   |1734206040766|Addiction, The (1995)                                                                             |Drama|Horror                               |Leif     |DuBuque  |75 |Refugiaburgh     |Female    |
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                                                                             |genres                                     |firstName|lastName |age|location         |gender    |partitionDate|
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+-------------+
+|644   |380    |2.3   |1734206040137|True Lies (1994)                                                                                  |Action|Adventure|Comedy|Romance|Thriller   |Cliff    |Dickinson|76 |Walshbury        |Male      |2024-12-15   |
+|496   |363    |3.1   |1734206040206|Wonderful, Horrible Life of Leni Riefenstahl, The (Macht der Bilder: Leni Riefenstahl, Die) (1993)|Documentary                                |Ronny    |Rohan    |31 |Lake Ken         |Non-Binary|2024-12-15   |
+|243   |412    |4.3   |1734206040275|Age of Innocence, The (1993)                                                                      |Drama                                      |Leif     |DuBuque  |75 |Refugiaburgh     |Female    |2024-12-15   |
+|887   |162    |2.6   |1734206040347|Crumb (1994)                                                                                      |Documentary                                |Caron    |Fay      |28 |Lake Eugeniomouth|Female    |2024-12-15   |
+|811   |709    |2.8   |1734206040416|Oliver & Company (1988)                                                                           |Adventure|Animation|Children|Comedy|Musical|Armando  |Reinger  |36 |Port Benburgh    |Male      |2024-12-15   |
+|497   |990    |3.3   |1734206040486|Maximum Risk (1996)                                                                               |Action|Adventure|Thriller                  |Ross     |Tromp    |47 |New Lavoneview   |Male      |2024-12-15   |
+|43    |687    |3.8   |1734206040557|Country Life (1994)                                                                               |Drama|Romance                              |Sherise  |Kling    |37 |South Preston    |Male      |2024-12-15   |
+|337   |33     |2.2   |1734206040626|Wings of Courage (1995)                                                                           |Adventure|Romance|IMAX                     |Blythe   |Hyatt    |33 |Lake Harrisonstad|Female    |2024-12-15   |
+|265   |495    |2.1   |1734206040695|In the Realm of the Senses (Ai no corrida) (1976)                                                 |Drama                                      |Madaline |Mann     |79 |West Tandraville |Male      |2024-12-15   |
+|243   |152    |3.4   |1734206040766|Addiction, The (1995)                                                                             |Drama|Horror                               |Leif     |DuBuque  |75 |Refugiaburgh     |Female    |2024-12-15   |
++------+-------+------+-------------+--------------------------------------------------------------------------------------------------+-------------------------------------------+---------+---------+---+-----------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                              |2.5      |1          |
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                                      |2.4      |1          |
+|109    |Headless Body in Topless Bar (1995)                                         |Comedy|Drama|Thriller                      |4.1      |1          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|3.53     |3          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance                       |3.8      |4          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |2.7      |2          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                                      |3.1      |2          |
+|682    |Tigrero: A Film That Was Never Made (1994)                                  |Documentary|Drama                          |4.0      |1          |
+|485    |Last Action Hero (1993)                                                     |Action|Adventure|Comedy|Fantasy            |2.4      |2          |
+|395    |Desert Winds (1995)                                                         |Drama|Fantasy|Romance                      |1.75     |2          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.79     |181        |
+|Romance    |2.74     |335        |
+|Thriller   |2.86     |319        |
+|Adventure  |2.8      |177        |
+|Drama      |2.76     |890        |
+|War        |2.59     |52         |
+|Documentary|2.92     |67         |
+|Fantasy    |2.56     |78         |
+|Mystery    |2.6      |92         |
+|Musical    |2.77     |66         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|69 |Non-Binary|West Angelicamouth|2.07     |3          |
+|33 |Male      |East Syble        |2.1      |3          |
+|79 |Female    |West Salvatore    |3.03     |3          |
+|50 |Male      |Shirleyton        |3.7      |1          |
+|43 |Non-Binary|Cristystad        |3.5      |1          |
+|30 |Non-Binary|Schuliststad      |1.9      |1          |
+|77 |Female    |Port Rosio        |3.17     |3          |
+|66 |Non-Binary|Rauberg           |3.8      |1          |
+|52 |Female    |Nicolasfurt       |3.0      |1          |
+|64 |Non-Binary|Port Miltonview   |2.85     |2          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 9 processed successfully
+24/12/15 01:28:05 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:28:09 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|144   |974    |1.9   |1734206160045|
+|787   |629    |4.2   |1734206160115|
+|998   |354    |4.1   |1734206160185|
+|556   |594    |1.0   |1734206160255|
+|197   |660    |3.9   |1734206160324|
+|635   |530    |0.8   |1734206160395|
+|435   |79     |4.4   |1734206160464|
+|360   |984    |1.9   |1734206160535|
+|498   |416    |1.6   |1734206160604|
+|373   |540    |4.3   |1734206160674|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+--------------------------------------+----------------------------------------+
+|movieId|userId|rating|timestamp    |title                                 |genres                                  |
++-------+------+------+-------------+--------------------------------------+----------------------------------------+
+|974    |144   |1.9   |1734206160045|Algiers (1938)                        |Drama|Romance                           |
+|629    |787   |4.2   |1734206160115|Rude (1995)                           |Drama                                   |
+|354    |998   |4.1   |1734206160185|Cobb (1994)                           |Drama                                   |
+|594    |556   |1.0   |1734206160255|Snow White and the Seven Dwarfs (1937)|Animation|Children|Drama|Fantasy|Musical|
+|660    |197   |3.9   |1734206160324|August (1996)                         |Drama                                   |
+|530    |635   |0.8   |1734206160395|Second Best (1994)                    |Drama                                   |
+|79     |435   |4.4   |1734206160464|Juror, The (1996)                     |Drama|Thriller                          |
+|984    |360   |1.9   |1734206160535|Pompatus of Love, The (1996)          |Comedy|Drama                            |
+|416    |498   |1.6   |1734206160604|Bad Girls (1994)                      |Western                                 |
+|540    |373   |4.3   |1734206160674|Sliver (1993)                         |Thriller                                |
++-------+------+------+-------------+--------------------------------------+----------------------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+
+|userId|movieId|rating|timestamp    |title                                 |genres                                  |firstName|lastName|age|location        |gender    |
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+
+|144   |974    |1.9   |1734206160045|Algiers (1938)                        |Drama|Romance                           |Dina     |Rohan   |38 |East Augustaside|Female    |
+|787   |629    |4.2   |1734206160115|Rude (1995)                           |Drama                                   |Josef    |Deckow  |19 |Nestorfort      |Male      |
+|998   |354    |4.1   |1734206160185|Cobb (1994)                           |Drama                                   |Liane    |Rolfson |32 |New Bobshire    |Female    |
+|556   |594    |1.0   |1734206160255|Snow White and the Seven Dwarfs (1937)|Animation|Children|Drama|Fantasy|Musical|Maren    |Robel   |80 |Oraleeshire     |Male      |
+|197   |660    |3.9   |1734206160324|August (1996)                         |Drama                                   |Wes      |Rath    |45 |Marielaland     |Non-Binary|
+|635   |530    |0.8   |1734206160395|Second Best (1994)                    |Drama                                   |Gaynelle |Gerhold |34 |Abbotthaven     |Male      |
+|435   |79     |4.4   |1734206160464|Juror, The (1996)                     |Drama|Thriller                          |Gail     |Cormier |52 |Lake Sherylstad |Non-Binary|
+|360   |984    |1.9   |1734206160535|Pompatus of Love, The (1996)          |Comedy|Drama                            |Lorrine  |Sawayn  |66 |West Augustatown|Non-Binary|
+|498   |416    |1.6   |1734206160604|Bad Girls (1994)                      |Western                                 |Allen    |O'Conner|72 |Willmsview      |Female    |
+|373   |540    |4.3   |1734206160674|Sliver (1993)                         |Thriller                                |Tamela   |Roberts |54 |East Stanborough|Female    |
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                 |genres                                  |firstName|lastName|age|location        |gender    |partitionDate|
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+-------------+
+|144   |974    |1.9   |1734206160045|Algiers (1938)                        |Drama|Romance                           |Dina     |Rohan   |38 |East Augustaside|Female    |2024-12-15   |
+|787   |629    |4.2   |1734206160115|Rude (1995)                           |Drama                                   |Josef    |Deckow  |19 |Nestorfort      |Male      |2024-12-15   |
+|998   |354    |4.1   |1734206160185|Cobb (1994)                           |Drama                                   |Liane    |Rolfson |32 |New Bobshire    |Female    |2024-12-15   |
+|556   |594    |1.0   |1734206160255|Snow White and the Seven Dwarfs (1937)|Animation|Children|Drama|Fantasy|Musical|Maren    |Robel   |80 |Oraleeshire     |Male      |2024-12-15   |
+|197   |660    |3.9   |1734206160324|August (1996)                         |Drama                                   |Wes      |Rath    |45 |Marielaland     |Non-Binary|2024-12-15   |
+|635   |530    |0.8   |1734206160395|Second Best (1994)                    |Drama                                   |Gaynelle |Gerhold |34 |Abbotthaven     |Male      |2024-12-15   |
+|435   |79     |4.4   |1734206160464|Juror, The (1996)                     |Drama|Thriller                          |Gail     |Cormier |52 |Lake Sherylstad |Non-Binary|2024-12-15   |
+|360   |984    |1.9   |1734206160535|Pompatus of Love, The (1996)          |Comedy|Drama                            |Lorrine  |Sawayn  |66 |West Augustatown|Non-Binary|2024-12-15   |
+|498   |416    |1.6   |1734206160604|Bad Girls (1994)                      |Western                                 |Allen    |O'Conner|72 |Willmsview      |Female    |2024-12-15   |
+|373   |540    |4.3   |1734206160674|Sliver (1993)                         |Thriller                                |Tamela   |Roberts |54 |East Stanborough|Female    |2024-12-15   |
++------+-------+------+-------------+--------------------------------------+----------------------------------------+---------+--------+---+----------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                                                       |genres                                     |avgRating|ratingCount|
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+|745    |Wallace & Gromit: A Close Shave (1995)                                      |Animation|Children|Comedy                  |2.4      |1          |
+|381    |When a Man Loves a Woman (1994)                                             |Drama|Romance                              |2.5      |1          |
+|681    |Coup de torchon (Clean Slate) (1981)                                        |Crime                                      |4.1      |1          |
+|656    |Eddie (1996)                                                                |Comedy                                     |4.65     |2          |
+|52     |Mighty Aphrodite (1995)                                                     |Comedy|Drama|Romance                       |5.0      |1          |
+|428    |Bronx Tale, A (1993)                                                        |Drama                                      |1.92     |5          |
+|395    |Desert Winds (1995)                                                         |Drama|Fantasy|Romance                      |1.5      |1          |
+|675    |Hostile Intentions (1994)                                                   |Action|Drama|Thriller                      |3.2      |7          |
+|709    |Oliver & Company (1988)                                                     |Adventure|Animation|Children|Comedy|Musical|2.3      |2          |
+|405    |Highlander III: The Sorcerer (a.k.a. Highlander: The Final Dimension) (1994)|Action|Fantasy                             |2.2      |2          |
++-------+----------------------------------------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.85     |175        |
+|Romance    |2.85     |322        |
+|Thriller   |2.75     |310        |
+|Adventure  |2.72     |184        |
+|Drama      |2.79     |887        |
+|War        |2.71     |46         |
+|Documentary|2.63     |55         |
+|Fantasy    |3.02     |89         |
+|Mystery    |2.74     |93         |
+|Musical    |2.65     |52         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+--------------+---------+-----------+
+|age|gender    |location      |avgRating|ratingCount|
++---+----------+--------------+---------+-----------+
+|79 |Female    |West Salvatore|3.17     |3          |
+|50 |Male      |Shirleyton    |3.88     |4          |
+|58 |Female    |Port Gil      |4.0      |1          |
+|33 |Male      |East Syble    |2.4      |1          |
+|30 |Non-Binary|Schuliststad  |2.9      |3          |
+|77 |Female    |Port Rosio    |2.15     |2          |
+|66 |Non-Binary|Rauberg       |3.13     |3          |
+|43 |Non-Binary|Cristystad    |2.15     |2          |
+|57 |Female    |Giovannashire |2.5      |1          |
+|52 |Female    |Nicolasfurt   |1.5      |1          |
++---+----------+--------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 10 processed successfully
+24/12/15 01:30:04 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:30:08 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|395   |678    |3.6   |1734206280064|
+|915   |67     |1.6   |1734206280134|
+|878   |447    |3.8   |1734206280204|
+|194   |179    |1.0   |1734206280274|
+|126   |825    |0.6   |1734206280344|
+|706   |417    |4.8   |1734206280414|
+|607   |192    |2.2   |1734206280485|
+|538   |293    |0.6   |1734206280554|
+|786   |406    |2.3   |1734206280624|
+|947   |695    |2.9   |1734206280694|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+--------------------------------------------------------------+---------------------------+
+|movieId|userId|rating|timestamp    |title                                                         |genres                     |
++-------+------+------+-------------+--------------------------------------------------------------+---------------------------+
+|678    |395   |3.6   |1734206280064|Some Folks Call It a Sling Blade (1993)                       |Drama|Thriller             |
+|67     |915   |1.6   |1734206280134|Two Bits (1995)                                               |Drama                      |
+|447    |878   |3.8   |1734206280204|Favor, The (1994)                                             |Comedy|Romance             |
+|179    |194   |1.0   |1734206280274|Mad Love (1995)                                               |Drama|Romance              |
+|825    |126   |0.6   |1734206280344|Regular Guys (Echte Kerle) (1996)                             |Comedy|Romance             |
+|417    |706   |4.8   |1734206280414|Barcelona (1994)                                              |Comedy|Romance             |
+|192    |607   |2.2   |1734206280485|The Show (1995)                                               |Documentary                |
+|293    |538   |0.6   |1734206280554|Léon: The Professional (a.k.a. The Professional) (Léon) (1994)|Action|Crime|Drama|Thriller|
+|406    |786   |2.3   |1734206280624|Federal Hill (1994)                                           |Drama                      |
+|695    |947   |2.9   |1734206280694|True Crime (1996)                                             |Mystery|Thriller           |
++-------+------+------+-------------+--------------------------------------------------------------+---------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+
+|userId|movieId|rating|timestamp    |title                                                         |genres                     |firstName|lastName|age|location         |gender    |
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+
+|395   |678    |3.6   |1734206280064|Some Folks Call It a Sling Blade (1993)                       |Drama|Thriller             |Bernetta |Gaylord |55 |Melmouth         |Male      |
+|915   |67     |1.6   |1734206280134|Two Bits (1995)                                               |Drama                      |Delinda  |Weber   |75 |Lake Vashtishire |Female    |
+|878   |447    |3.8   |1734206280204|Favor, The (1994)                                             |Comedy|Romance             |Dillon   |Hamill  |45 |Maryellenport    |Female    |
+|194   |179    |1.0   |1734206280274|Mad Love (1995)                                               |Drama|Romance              |Wesley   |Wiza    |32 |Uptonburgh       |Non-Binary|
+|126   |825    |0.6   |1734206280344|Regular Guys (Echte Kerle) (1996)                             |Comedy|Romance             |Marcos   |Abbott  |47 |Davisfurt        |Non-Binary|
+|706   |417    |4.8   |1734206280414|Barcelona (1994)                                              |Comedy|Romance             |Bernice  |Walter  |59 |North Jerrold    |Male      |
+|607   |192    |2.2   |1734206280485|The Show (1995)                                               |Documentary                |Johnson  |Connelly|50 |New Ma           |Male      |
+|538   |293    |0.6   |1734206280554|Léon: The Professional (a.k.a. The Professional) (Léon) (1994)|Action|Crime|Drama|Thriller|Eva      |Kemmer  |51 |North Bartonville|Male      |
+|786   |406    |2.3   |1734206280624|Federal Hill (1994)                                           |Drama                      |Jody     |Larson  |74 |East Jacquelin   |Female    |
+|947   |695    |2.9   |1734206280694|True Crime (1996)                                             |Mystery|Thriller           |Deandra  |Goyette |41 |Darrelland       |Female    |
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                                         |genres                     |firstName|lastName|age|location         |gender    |partitionDate|
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+-------------+
+|395   |678    |3.6   |1734206280064|Some Folks Call It a Sling Blade (1993)                       |Drama|Thriller             |Bernetta |Gaylord |55 |Melmouth         |Male      |2024-12-15   |
+|915   |67     |1.6   |1734206280134|Two Bits (1995)                                               |Drama                      |Delinda  |Weber   |75 |Lake Vashtishire |Female    |2024-12-15   |
+|878   |447    |3.8   |1734206280204|Favor, The (1994)                                             |Comedy|Romance             |Dillon   |Hamill  |45 |Maryellenport    |Female    |2024-12-15   |
+|194   |179    |1.0   |1734206280274|Mad Love (1995)                                               |Drama|Romance              |Wesley   |Wiza    |32 |Uptonburgh       |Non-Binary|2024-12-15   |
+|126   |825    |0.6   |1734206280344|Regular Guys (Echte Kerle) (1996)                             |Comedy|Romance             |Marcos   |Abbott  |47 |Davisfurt        |Non-Binary|2024-12-15   |
+|706   |417    |4.8   |1734206280414|Barcelona (1994)                                              |Comedy|Romance             |Bernice  |Walter  |59 |North Jerrold    |Male      |2024-12-15   |
+|607   |192    |2.2   |1734206280485|The Show (1995)                                               |Documentary                |Johnson  |Connelly|50 |New Ma           |Male      |2024-12-15   |
+|538   |293    |0.6   |1734206280554|Léon: The Professional (a.k.a. The Professional) (Léon) (1994)|Action|Crime|Drama|Thriller|Eva      |Kemmer  |51 |North Bartonville|Male      |2024-12-15   |
+|786   |406    |2.3   |1734206280624|Federal Hill (1994)                                           |Drama                      |Jody     |Larson  |74 |East Jacquelin   |Female    |2024-12-15   |
+|947   |695    |2.9   |1734206280694|True Crime (1996)                                             |Mystery|Thriller           |Deandra  |Goyette |41 |Darrelland       |Female    |2024-12-15   |
++------+-------+------+-------------+--------------------------------------------------------------+---------------------------+---------+--------+---+-----------------+----------+-------------+
+only showing top 10 rows
+
+New enriched data written to cloud storage
+Movie Metrics DataFrame:
++-------+------------------------------------------+-------------------------------------------+---------+-----------+
+|movieId|title                                     |genres                                     |avgRating|ratingCount|
++-------+------------------------------------------+-------------------------------------------+---------+-----------+
+|109    |Headless Body in Topless Bar (1995)       |Comedy|Drama|Thriller                      |2.8      |6          |
+|681    |Coup de torchon (Clean Slate) (1981)      |Crime                                      |4.3      |3          |
+|745    |Wallace & Gromit: A Close Shave (1995)    |Animation|Children|Comedy                  |3.25     |2          |
+|395    |Desert Winds (1995)                       |Drama|Fantasy|Romance                      |2.8      |3          |
+|360    |I Love Trouble (1994)                     |Action|Comedy                              |4.3      |1          |
+|428    |Bronx Tale, A (1993)                      |Drama                                      |0.6      |1          |
+|709    |Oliver & Company (1988)                   |Adventure|Animation|Children|Comedy|Musical|4.7      |1          |
+|682    |Tigrero: A Film That Was Never Made (1994)|Documentary|Drama                          |2.6      |2          |
+|656    |Eddie (1996)                              |Comedy                                     |1.5      |2          |
+|52     |Mighty Aphrodite (1995)                   |Comedy|Drama|Romance                       |4.4      |1          |
++-------+------------------------------------------+-------------------------------------------+---------+-----------+
+only showing top 10 rows
+
+Movie metrics updated
+Genre Metrics DataFrame:
++-----------+---------+-----------+
+|genre      |avgRating|ratingCount|
++-----------+---------+-----------+
+|Crime      |2.77     |196        |
+|Romance    |2.76     |335        |
+|Thriller   |2.76     |310        |
+|Adventure  |2.78     |155        |
+|Drama      |2.69     |896        |
+|War        |2.68     |64         |
+|Documentary|2.83     |57         |
+|Fantasy    |2.78     |79         |
+|Mystery    |2.8      |98         |
+|Musical    |2.63     |48         |
++-----------+---------+-----------+
+only showing top 10 rows
+
+Genre metrics updated
+Demographic Metrics DataFrame:
++---+----------+------------------+---------+-----------+
+|age|gender    |location          |avgRating|ratingCount|
++---+----------+------------------+---------+-----------+
+|50 |Male      |Shirleyton        |0.85     |2          |
+|69 |Non-Binary|West Angelicamouth|1.6      |2          |
+|79 |Female    |West Salvatore    |4.8      |1          |
+|33 |Male      |East Syble        |2.1      |1          |
+|30 |Non-Binary|Schuliststad      |1.87     |8          |
+|52 |Female    |Nicolasfurt       |1.7      |5          |
+|66 |Non-Binary|Rauberg           |3.83     |3          |
+|57 |Female    |Giovannashire     |3.13     |3          |
+|77 |Female    |Port Rosio        |3.9      |4          |
+|43 |Non-Binary|Cristystad        |1.8      |1          |
++---+----------+------------------+---------+-----------+
+only showing top 10 rows
+
+Demographics metrics updated
+Batch 11 processed successfully
+24/12/15 01:32:04 WARN CacheManager: Asked to cache already cached data.
+24/12/15 01:32:09 WARN CacheManager: Asked to cache already cached data.
+Parsed Ratings DataFrame:
++------+-------+------+-------------+
+|userId|movieId|rating|timestamp    |
++------+-------+------+-------------+
+|869   |343    |3.4   |1734206400052|
+|142   |372    |2.0   |1734206400124|
+|149   |288    |2.4   |1734206400194|
+|419   |852    |0.8   |1734206400263|
+|411   |360    |2.4   |1734206400334|
+|272   |971    |2.4   |1734206400404|
+|629   |551    |4.5   |1734206400474|
+|405   |114    |4.4   |1734206400543|
+|280   |975    |4.4   |1734206400613|
+|918   |491    |3.4   |1734206400683|
++------+-------+------+-------------+
+only showing top 10 rows
+
+Ratings with Movies DataFrame:
++-------+------+------+-------------+--------------------------------------+----------------------------------+
+|movieId|userId|rating|timestamp    |title                                 |genres                            |
++-------+------+------+-------------+--------------------------------------+----------------------------------+
+|343    |869   |3.4   |1734206400052|Baby-Sitters Club, The (1995)         |Children                          |
+|372    |142   |2.0   |1734206400124|Reality Bites (1994)                  |Comedy|Drama|Romance              |
+|288    |149   |2.4   |1734206400194|Natural Born Killers (1994)           |Action|Crime|Thriller             |
+|852    |419   |0.8   |1734206400263|Tin Cup (1996)                        |Comedy|Drama|Romance              |
+|360    |411   |2.4   |1734206400334|I Love Trouble (1994)                 |Action|Comedy                     |
+|971    |272   |2.4   |1734206400404|Cat on a Hot Tin Roof (1958)          |Drama                             |
+|551    |629   |4.5   |1734206400474|Nightmare Before Christmas, The (1993)|Animation|Children|Fantasy|Musical|
+|114    |405   |4.4   |1734206400543|Margaret's Museum (1995)              |Drama                             |
+|975    |280   |4.4   |1734206400613|Something to Sing About (1937)        |Comedy|Musical                    |
+|491    |918   |3.4   |1734206400683|Man Without a Face, The (1993)        |Drama                             |
++-------+------+------+-------------+--------------------------------------+----------------------------------+
+only showing top 10 rows
+
+Enriched Ratings DataFrame:
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+
+|userId|movieId|rating|timestamp    |title                                 |genres                            |firstName|lastName   |age|location      |gender    |
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+
+|869   |343    |3.4   |1734206400052|Baby-Sitters Club, The (1995)         |Children                          |Jan      |Corwin     |35 |Lake Graham   |Male      |
+|142   |372    |2.0   |1734206400124|Reality Bites (1994)                  |Comedy|Drama|Romance              |Aura     |Stoltenberg|18 |Streichmouth  |Non-Binary|
+|149   |288    |2.4   |1734206400194|Natural Born Killers (1994)           |Action|Crime|Thriller             |Georgene |Schmitt    |46 |New Miquelview|Non-Binary|
+|419   |852    |0.8   |1734206400263|Tin Cup (1996)                        |Comedy|Drama|Romance              |Jan      |Predovic   |44 |Loreestad     |Male      |
+|411   |360    |2.4   |1734206400334|I Love Trouble (1994)                 |Action|Comedy                     |In       |Cruickshank|80 |West Zena     |Female    |
+|272   |971    |2.4   |1734206400404|Cat on a Hot Tin Roof (1958)          |Drama                             |Shae     |Yundt      |48 |Faheyburgh    |Male      |
+|629   |551    |4.5   |1734206400474|Nightmare Before Christmas, The (1993)|Animation|Children|Fantasy|Musical|Randall  |Kreiger    |45 |Hoseastad     |Male      |
+|405   |114    |4.4   |1734206400543|Margaret's Museum (1995)              |Drama                             |Britt    |Kunze      |67 |Blickshire    |Non-Binary|
+|280   |975    |4.4   |1734206400613|Something to Sing About (1937)        |Comedy|Musical                    |Ricardo  |Crona      |46 |North Eneida  |Non-Binary|
+|918   |491    |3.4   |1734206400683|Man Without a Face, The (1993)        |Drama                             |Raymond  |Crona      |73 |Laraineborough|Female    |
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+
+only showing top 10 rows
+
+Final Enriched DataFrame:
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+-------------+
+|userId|movieId|rating|timestamp    |title                                 |genres                            |firstName|lastName   |age|location      |gender    |partitionDate|
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+-------------+
+|869   |343    |3.4   |1734206400052|Baby-Sitters Club, The (1995)         |Children                          |Jan      |Corwin     |35 |Lake Graham   |Male      |2024-12-15   |
+|142   |372    |2.0   |1734206400124|Reality Bites (1994)                  |Comedy|Drama|Romance              |Aura     |Stoltenberg|18 |Streichmouth  |Non-Binary|2024-12-15   |
+|149   |288    |2.4   |1734206400194|Natural Born Killers (1994)           |Action|Crime|Thriller             |Georgene |Schmitt    |46 |New Miquelview|Non-Binary|2024-12-15   |
+|419   |852    |0.8   |1734206400263|Tin Cup (1996)                        |Comedy|Drama|Romance              |Jan      |Predovic   |44 |Loreestad     |Male      |2024-12-15   |
+|411   |360    |2.4   |1734206400334|I Love Trouble (1994)                 |Action|Comedy                     |In       |Cruickshank|80 |West Zena     |Female    |2024-12-15   |
+|272   |971    |2.4   |1734206400404|Cat on a Hot Tin Roof (1958)          |Drama                             |Shae     |Yundt      |48 |Faheyburgh    |Male      |2024-12-15   |
+|629   |551    |4.5   |1734206400474|Nightmare Before Christmas, The (1993)|Animation|Children|Fantasy|Musical|Randall  |Kreiger    |45 |Hoseastad     |Male      |2024-12-15   |
+|405   |114    |4.4   |1734206400543|Margaret's Museum (1995)              |Drama                             |Britt    |Kunze      |67 |Blickshire    |Non-Binary|2024-12-15   |
+|280   |975    |4.4   |1734206400613|Something to Sing About (1937)        |Comedy|Musical                    |Ricardo  |Crona      |46 |North Eneida  |Non-Binary|2024-12-15   |
+|918   |491    |3.4   |1734206400683|Man Without a Face, The (1993)        |Drama                             |Raymond  |Crona      |73 |Laraineborough|Female    |2024-12-15   |
++------+-------+------+-------------+--------------------------------------+----------------------------------+---------+-----------+---+--------------+----------+-------------+
+only showing top 10 rows
+
