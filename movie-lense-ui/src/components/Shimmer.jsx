@@ -5,7 +5,7 @@ const Shimmer = () => {
     <div
       className="space-y-4"
       style={{
-        width: "75%",  // This ensures the shimmer takes up 75% width
+        
         height: "300px",  // Fixed height for the shimmer container
         display: "flex",
         flexDirection: "column",

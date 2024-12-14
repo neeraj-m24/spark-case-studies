@@ -1,6 +1,11 @@
+
+
 import React, { useState, useEffect } from "react";
-import Table from "./components/Table"; 
+import Table from "./components/Table";
 import Shimmer from "./components/Shimmer";
+import GenreChart from "./components/GenreChart";
+import Header from "./components/Header";
+import DemographicsChart from "./components/DemographicsChart";  // Import DemographicsChart
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -23,6 +28,7 @@ const App = () => {
     },
   };
 
+  // Fetch data from the selected endpoint
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -34,6 +40,7 @@ const App = () => {
         }
         const json = await response.json();
         setData(json);
+        console.log("Fetched data:", json); // Debug log
       } catch (err) {
         setError(err.message);
       } finally {
@@ -45,32 +52,29 @@ const App = () => {
   }, [endpoint]);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Metrics Data</h1>
+    <div className="min-h-screen bg-[#fafbfc] flex flex-col">
+      {/* Full-width Header */}
+      <Header
+        currentEndpoint={endpoint}
+        onEndpointChange={setEndpoint}
+        endpoints={endpoints}
+      />
 
-      {/* Dropdown for selecting the endpoint */}
-      <div className="mb-4">
-        <label htmlFor="endpoint" className="mr-2 font-semibold">Select Endpoint:</label>
-        <select
-          id="endpoint"
-          value={endpoint}
-          onChange={(e) => setEndpoint(e.target.value)}
-          className="p-2 border border-gray-300 rounded"
-        >
-          {Object.keys(endpoints).map((key) => (
-            <option key={key} value={key}>
-              {key.charAt(0).toUpperCase() + key.slice(1)} {/* Capitalize endpoint */}
-            </option>
-          ))}
-        </select>
+      <div className="flex-grow p-4">
+        {/* Conditional Rendering for Charts and Data */}
+        {endpoint === "genres" && <GenreChart genres={data} />}
+        {endpoint === "demographics" && <DemographicsChart data={data} />} {/* Display DemographicsChart */}
+
+        {/* Display Loading, Error, or Table */}
+        {loading && <Shimmer />}
+        {error && <p className="text-red-500">Error: {error}</p>}
+        {!loading && !error && data.length === 0 && (
+          <p>No data available for this category.</p>
+        )}
+        {!loading && !error && data.length > 0 &&  (
+          <Table headers={endpoints[endpoint].headers} data={data} />
+        )}
       </div>
-
-      {/* Display Loading, Error, or Table */}
-      {loading && <Shimmer />} {/* Show shimmer loading when data is loading */}
-      {error && <p className="text-red-500">Error: {error}</p>}
-      {!loading && !error && data.length > 0 && (
-        <Table headers={endpoints[endpoint].headers} data={data} />
-      )}
     </div>
   );
 };
